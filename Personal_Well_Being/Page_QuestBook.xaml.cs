@@ -13,6 +13,7 @@ namespace Personal_Well_Being
         private UserController UC;
 
         private List<Attribute> Stats { get; set; }
+        private List<Attribute> Skills { get; set; }
 
         public Page_QuestBook(MainWindow mainWindow, UserController UC)
         {
@@ -21,7 +22,9 @@ namespace Personal_Well_Being
             this.mainWindow = mainWindow;
             this.UserName.Content = UC.CurrentUser.Name;
             this.Stats = UC.CurrentUser.CurrentSheet.Stats;
+            this.Skills = UC.CurrentUser.CurrentSheet.Skills;
             this.StatList.ItemsSource = this.Stats;
+            this.SkilList.ItemsSource = this.Skills;
         }
     }
 }
