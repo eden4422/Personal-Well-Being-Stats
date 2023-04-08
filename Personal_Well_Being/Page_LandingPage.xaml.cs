@@ -31,7 +31,7 @@ namespace Personal_Well_Being
 
         private void NewGameButton_Click(object sender, RoutedEventArgs e)
         {
-            this.mainWindow.ChangePage(new Page_CharacterCreation());
+            this.mainWindow.ChangePage(new Page_CharacterCreation(this.mainWindow));
         }
 
         private void LoadGameButton_Click(object sender, RoutedEventArgs e)
@@ -40,7 +40,7 @@ namespace Personal_Well_Being
         }
         private void QuitButton_Click(object sender, RoutedEventArgs e)
         {
-
+            this.mainWindow.Close();
         }
     }
 }
