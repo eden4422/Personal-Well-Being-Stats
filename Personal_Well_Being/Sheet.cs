@@ -111,8 +111,9 @@
         /// Adds a new stat attribute to the list of stats.
         /// </summary>
         /// <param name="newStat">The new stat to be added.</param>
-        public void AddStat(Attribute newStat)
+        public void AddStat(string statName, int initialLevel, int priority)
         {
+            Attribute newStat = new Attribute(statName, initialLevel, priority);
             this.stats.Add(newStat);
             newStat.PropertyChanged += this.AttributeXpChange;
         }
@@ -121,8 +122,9 @@
         /// Adds a new skill attribute to the list of stats.
         /// </summary>
         /// <param name="newSkill">The new skill to be added.</param>
-        public void AddSkill(Attribute newSkill)
+        public void AddSkill(string statName, int initialLevel, int priority)
         {
+            Attribute newSkill = new Attribute(statName, initialLevel, priority);
             this.skills.Add(newSkill);
             newSkill.PropertyChanged += this.AttributeXpChange;
         }
