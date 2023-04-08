@@ -1,0 +1,59 @@
+﻿<Page x:Class="Personal_Well_Being.Page_CharacterCreation"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Personal_Well_Being"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Page_CharacterCreation">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock FontSize="20" TextAlignment="Center" Grid.Row="0">Character Creation</TextBlock>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0">
+                <Button x:Name="UploadPictureButton" Padding="3" Margin="10" Click="UploadPictureButton_Click">Upload Picture</Button>
+                <Button x:Name="WriteBiographyButton" Padding="3" Margin="10" Click="WriteBiographyButton_Click">Write Biography</Button>
+                <Button x:Name="ChooseStatsButton" Padding="3" Margin="10" Click="ChooseStatsButton_Click">Choose Stats</Button>
+                <Button x:Name="DefineStatsButton" Padding="3" Margin="10" Click="DefineStatsButton_Click">Define Stats</Button>
+                <Button x:Name="ChooseSkillsButton" Padding="3" Margin="10" Click="ChooseSkillsButton_Click">Choose Skills</Button>
+                <Button x:Name="DefineSkillsButton" Padding="3"  Margin="10" Click="DefineSkillsButton_Click">Define Skills</Button>
+                <Button x:Name="NameButton" Padding="3"  Margin="10" Click="NameButton_Click">Name</Button>
+            </StackPanel>
+
+            <ListView Margin="15" Grid.Column="1">
+                <ListViewItem>asdf</ListViewItem>
+            </ListView>
+
+            <Grid Grid.Column="2">
+                <Grid Margin="15">
+                    <Border  BorderThickness="1" BorderBrush="Black">
+
+                        <Image Source="C:\RealStats\Personal-Well-Being-Stats\Personal_Well_Being\image1.jpg"/>
+                    </Border>
+                </Grid>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="5*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="BackButton" Margin="20" Grid.Column="0" Click="BackButton_Click">Back</Button>
+            <Button x:Name="DoneButton" Margin="20" Grid.Column="1" Click="DoneButton_Click">Done</Button>
+        </Grid>
+    </Grid>
+</Page>
