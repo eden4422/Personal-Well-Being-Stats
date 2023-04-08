@@ -19,6 +19,8 @@ namespace Personal_Well_Being
         {
             InitializeComponent();
             this.mainWindow = mainWindow;
+
+            ChooseSkillsButton.IsEnabled = false;
         }
 
         private void UploadPictureButton_Click(object sender, RoutedEventArgs e)
