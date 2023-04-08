@@ -16,9 +16,26 @@
         <TextBlock FontSize="18" TextAlignment="Center" Grid.Row="0">Choose Stats</TextBlock>
 
         <Grid Margin="20, 0, 20, 0" Grid.Row="1">
-            
-            <!-- Code goes here -->
-            
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+                
+                <StackPanel Grid.Column="0">
+                    <TextBlock FontSize="16">Select the Stats that mean the most to you.</TextBlock>
+                
+                    <CheckBox FontSize="14">Mood</CheckBox>
+                    <CheckBox FontSize="14">Fitness</CheckBox>
+                    <CheckBox FontSize="14">Career</CheckBox>
+                    <CheckBox FontSize="14">Friends</CheckBox>
+                    <CheckBox FontSize="14">Companionship</CheckBox>
+                    <CheckBox FontSize="14">Spirituality</CheckBox>
+                    <CheckBox FontSize="14">School</CheckBox>
+                    <CheckBox FontSize="14">Family</CheckBox
+                </StackPanel>
+            </Grid>
+
         </Grid>
         
         <Grid Grid.Row="2">
