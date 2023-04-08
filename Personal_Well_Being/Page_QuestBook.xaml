@@ -18,7 +18,7 @@
             <Label x:Name="UserName" DockPanel.Dock="Top" Height="50" FontSize="28"/>
 
             <TabControl DockPanel.Dock="Top">
-                <TabItem Header="Stats" Grid.Column="0">
+                <TabItem Header="Stats" Grid.Column="0" Width="90">
                     <ItemsControl x:Name="StatList">
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
@@ -34,7 +34,7 @@
                         </ItemsControl.ItemTemplate>
                     </ItemsControl>
                 </TabItem>
-                <TabItem Header="Skills">
+                <TabItem Header="Skills" Width="90">
                     <ItemsControl x:Name="SkilList">
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
@@ -52,6 +52,8 @@
                 </TabItem>
             </TabControl>
         </DockPanel>
-        <Button Grid.Column="1">Test</Button>
+        <DockPanel Grid.Column="1">
+            
+        </DockPanel>
     </Grid>
 </Page>
