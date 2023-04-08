@@ -1,3 +1,5 @@
+
+﻿using System.Collections.Generic;
 ﻿using Microsoft.Win32;
 using System;
 using System.Windows;
@@ -44,10 +46,28 @@ namespace Personal_Well_Being
 
         private void ChooseStatsButton_Click(object sender, RoutedEventArgs e)
         {
+            bool? mood = false;
+            bool? fitness = false;
+            bool? career = false;
+            bool? friends = false;
+            bool? companionship = false;
+            bool? spirituality = false;
+            bool? school = false;
+            bool? family = false;
+
             Window_ChooseStats window = new Window_ChooseStats();
             if(window.ShowDialog() == true )
             {
+                mood = window.mood;
+                fitness = window.fitness;
+                career = window.career;
+                friends = window.friends;
+                companionship = window.companionship;
+                spirituality= window.spirituality;
+                school = window.school;
+                family = window.family;
 
+                // LINK TO BACKEND HERE
             }
         }
 
@@ -62,10 +82,15 @@ namespace Personal_Well_Being
 
         private void ChooseSkillsButton_Click(object sender, RoutedEventArgs e)
         {
+            List<string> skills = new List<string>();
+
             Window_ChooseSkills window = new Window_ChooseSkills();
             if (window.ShowDialog() == true )
             {
+                // this is a list of strings
+                skills = window.skills;
 
+                // LINK TO BACKEND HERE
             }
         }
 
