@@ -20,25 +20,28 @@ namespace Personal_Well_Being
             InitializeComponent();
             this.UC = UC;
             this.mainWindow = mainWindow;
-            
-            // commented out bc everything is null
-            /*
-            this.UserName.Content = UC.CurrentUser.Name;
             this.Stats = UC.CurrentUser.CurrentSheet.Stats;
             this.Skills = UC.CurrentUser.CurrentSheet.Skills;
             this.StatList.ItemsSource = this.Stats;
             this.SkilList.ItemsSource = this.Skills;
-             */
         }
 
         private void AddMilestoneButton_Click(object sender, System.Windows.RoutedEventArgs e)
         {
+            Window_AddMilestone window = new Window_AddMilestone();
+            if (window.ShowDialog() == true)
+            {
 
+            }
         }
 
         private void AddTaskButton_Click(object sender, System.Windows.RoutedEventArgs e)
         {
+            Window_AddTask window = new Window_AddTask();
+            if (window.ShowDialog() == true)
+            {
 
+            }
         }
 
         private void GearButton_Click(object sender, System.Windows.RoutedEventArgs e)
@@ -55,7 +58,8 @@ namespace Personal_Well_Being
 
         private void CompletedButton_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-
+            Victory victory = new Victory();
+            victory.Show();
         }
     }
 }

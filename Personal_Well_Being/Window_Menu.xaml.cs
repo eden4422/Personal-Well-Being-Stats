@@ -39,13 +39,17 @@ namespace Personal_Well_Being
 
         private void StartScreenButton_Click(object sender, RoutedEventArgs e)
         {
-
+            mainWindow.ChangePage(new Page_LandingPage(mainWindow));
+            this.Close();
         }
 
         private void QuitButton_Click(object sender, RoutedEventArgs e)
         {
-            mainWindow.Close();
-            this.Close();
+            Window_AreYouSure window = new Window_AreYouSure(mainWindow);
+            if (window.ShowDialog() == true)
+            {
+                this.Close();
+            }
         }
     }
 }
