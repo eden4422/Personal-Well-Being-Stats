@@ -132,7 +132,7 @@ namespace Personal_Well_Being
                     {
                         if (UC.CurrentUser != null)
                         {
-                            UC.CurrentUser.CurrentSheet.AddStat("Friend", 0, 0);
+                            UC.CurrentUser.CurrentSheet.AddStat("Social", 0, 0);
                         }
                     }
                 }
@@ -166,7 +166,7 @@ namespace Personal_Well_Being
                     {
                         if (UC.CurrentUser != null)
                         {
-                            UC.CurrentUser.CurrentSheet.AddStat("School", 0, 0);
+                            UC.CurrentUser.CurrentSheet.AddStat("Knowledge", 0, 0);
                         }
                     }
 
@@ -178,7 +178,7 @@ namespace Personal_Well_Being
                     {
                         if (UC.CurrentUser != null)
                         {
-                            UC.CurrentUser.CurrentSheet.AddStat("Family", 0, 0);
+                            UC.CurrentUser.CurrentSheet.AddStat("Financial", 0, 0);
                         }
                     }
 
