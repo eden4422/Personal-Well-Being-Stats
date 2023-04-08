@@ -23,44 +23,34 @@
 
             <StackPanel Orientation="Horizontal" Grid.Row="0">
                 <Button x:Name="GearButton" Width="50" Height="50" Click="GearButton_Click" >
-                    <Image Source="C:\RealStats\Personal-Well-Being-Stats\Personal_Well_Being\gear.png"/>
+                    <Image Source="/gear.png"/>
                 </Button>
 
-                <Button x:Name="ProgressReport" Click="ProgressReport_Click">
-                    <Image Source="C:\RealStats\Personal-Well-Being-Stats\Personal_Well_Being\journal.png"/>
+                <Button x:Name="ProgressReport" Width="50" Click="ProgressReport_Click">
+                    <Image Source="/journal.png"/>
                 </Button>
             </StackPanel>
 
             <TabControl Grid.Row="1">
                 <TabItem Header="Stats" Grid.Column="0" Width="90">
-                    <ItemsControl x:Name="StatList">
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate>
-                                <Grid Margin="0,0,0,5">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*" />
-                                        <ColumnDefinition Width="50" />
-                                    </Grid.ColumnDefinitions>
-                                    
-                                </Grid>
-                            </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                    </ItemsControl>
+                    <ListView x:Name="StatList">
+                        <ListView.View>
+                            <GridView AllowsColumnReorder="false">
+                                <GridViewColumn Header="Stat" Width="Auto" DisplayMemberBinding="{Binding Name}" />
+                                <GridViewColumn Header="Value" Width="Auto" DisplayMemberBinding="{Binding CurrentValue}"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
                 </TabItem>
                 <TabItem Header="Skills" Width="90">
-                    <ItemsControl x:Name="SkilList">
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate>
-                                <Grid Margin="0,0,0,5">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*" />
-                                        <ColumnDefinition Width="*" />
-                                    </Grid.ColumnDefinitions>
-                                    
-                                </Grid>
-                            </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                    </ItemsControl>
+                    <ListView x:Name="SkillList">
+                        <ListView.View>
+                            <GridView AllowsColumnReorder="false">
+                                <GridViewColumn Header="Stat" Width="Auto" DisplayMemberBinding="{Binding Name}" />
+                                <GridViewColumn Header="Value" Width="Auto" DisplayMemberBinding="{Binding CurrentValue}"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
                 </TabItem>
             </TabControl>
         </Grid>

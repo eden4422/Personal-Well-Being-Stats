@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Image Source="parchment.jpg" Stretch="Fill"></Image>
+        <Image Source="/parchment.jpg" Stretch="Fill"/>
         <Frame x:Name="Main" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>

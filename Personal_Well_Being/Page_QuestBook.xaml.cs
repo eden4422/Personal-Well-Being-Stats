@@ -23,7 +23,7 @@ namespace Personal_Well_Being
             this.Stats = UC.CurrentUser.CurrentSheet.Stats;
             this.Skills = UC.CurrentUser.CurrentSheet.Skills;
             this.StatList.ItemsSource = this.Stats;
-            this.SkilList.ItemsSource = this.Skills;
+            this.SkillList.ItemsSource = this.Skills;
 
             // AddMilestone button becomes enabled when a stat or skill is selected
             this.AddMilestoneButton.IsEnabled = false;
