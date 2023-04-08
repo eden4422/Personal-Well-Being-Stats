@@ -24,7 +24,8 @@
                          AcceptsReturn="True"
                          AcceptsTab="True"
                          AutoWordSelection="True"
-                         TextWrapping="WrapWithOverflow"/>
+                         TextWrapping="WrapWithOverflow"
+                         KeyDown="BiographyTextBox_KeyDown"/>
             </StackPanel>
         </Grid>
 

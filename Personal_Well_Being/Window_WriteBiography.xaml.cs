@@ -13,6 +13,8 @@ namespace Personal_Well_Being
         {
             InitializeComponent();
             this.DataContext = this;
+
+            BiographyTextBox.Focus();
         }
 
         public string InputBiography { get; set; } = string.Empty;
@@ -28,6 +30,17 @@ namespace Personal_Well_Being
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void BiographyTextBox_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            if (e.Key == System.Windows.Input.Key.Enter)
+            {
+                bio = BiographyTextBox.Text;
+
+                DialogResult = true;
+                this.Close();
+            }
         }
     }
 }
