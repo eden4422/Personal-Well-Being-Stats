@@ -54,7 +54,7 @@ namespace Personal_Well_Being
                 if (this.totalXP != value)
                 {
                     this.totalXP = value;
-                    this.XPChanged?.Invoke(this, new PropertyChangedEventArgs("XP")); 
+                    this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("XP")); 
                 }
                 
                     
@@ -77,7 +77,7 @@ namespace Personal_Well_Being
             get { return this.tasks;}
         }
 
-        public event PropertyChangedEventHandler? XPChanged = (sender, e) => { };
+        public event PropertyChangedEventHandler? PropertyChanged;
 
         /// <summary>
         /// Instantiates a new milestone object, adds it to this attribute's list of milestones. 
