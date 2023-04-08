@@ -32,7 +32,7 @@
             </StackPanel>
 
             <TabControl Grid.Row="1">
-                <TabItem Header="Stats" Grid.Column="0" Width="90">
+                <TabItem Header="Stats" FontFamily="Old English Text MT" Grid.Column="0" Width="90">
                     <ListView x:Name="StatList" SelectionChanged="StatList_SelectionChanged">
                         <ListView.View>
                             <GridView AllowsColumnReorder="false">
@@ -42,7 +42,7 @@
                         </ListView.View>
                     </ListView>
                 </TabItem>
-                <TabItem Header="Skills" Width="90">
+                <TabItem FontFamily="Old English Text MT" Header="Skills" Width="90">
                     <ListView x:Name="SkillList">
                         <ListView.View>
                             <GridView AllowsColumnReorder="false">
@@ -70,9 +70,9 @@
                         <RowDefinition Height="40"/>
                     </Grid.RowDefinitions>
 
-                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" Grid.Row="0">QUEST</TextBlock>
+                    <TextBlock HorizontalAlignment="Center" FontFamily="Old English Text MT" Foreground="Goldenrod" VerticalAlignment="Center" FontSize="24" Grid.Row="0">QUESTBOOK</TextBlock>
 
-                    <ListView x:Name="milestoneListView" Margin="10,0,10,10" Grid.Row="1" >
+                    <ListView FontFamily="Old English Text MT" x:Name="milestoneListView" Margin="10,0,10,10" Grid.Row="1" >
                         <ListView x:Name="MilestoneList">
                             <ListView.View>
                                 <GridView AllowsColumnReorder="false">
@@ -83,7 +83,7 @@
                         </ListView>
                     </ListView>
 
-                    <Button Margin="20,0, 20, 0" x:Name="AddMilestoneButton" Grid.Row="2" Click="AddMilestoneButton_Click">Add Milestone</Button>
+                    <Button Margin="20,0, 20, 0" x:Name="AddMilestoneButton" Background="Goldenrod" FontSize="25" FontFamily="Old English Text MT" Grid.Row="2" Click="AddMilestoneButton_Click">Add Milestone</Button>
                 </Grid>
 
             </Grid>
@@ -95,7 +95,7 @@
                     <RowDefinition Height="40"/>
                 </Grid.RowDefinitions>
 
-                <TextBlock FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Row="0">Journey</TextBlock>
+                <TextBlock FontFamily="Old English Text MT" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Row="0">Journey</TextBlock>
 
                 <Grid Margin="0,0,0,10" Grid.Row="1">
 
@@ -108,7 +108,7 @@
 
                 </Grid>
 
-                <Button Margin="20,0,20,0" x:Name="AddTaskButton" Grid.Row="2" Click="AddTaskButton_Click" Height="40" VerticalAlignment="Top">Add Task</Button>
+                <Button Margin="20,0,20,0" x:Name="AddTaskButton" FontFamily="Old English Text MT" FontSize="25" Background="Goldenrod" Grid.Row="2" Click="AddTaskButton_Click" Height="40" VerticalAlignment="Top">Add Task</Button>
             </Grid>
         </Grid>
     </Grid>
