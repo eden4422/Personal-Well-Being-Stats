@@ -14,13 +14,13 @@
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
 
-        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="30" Grid.Row="0">Add Task</TextBlock>
+        <TextBlock HorizontalAlignment="Center" FontFamily="Old English Text MT" Foreground="Goldenrod" VerticalAlignment="Bottom" FontSize="30" Grid.Row="0">Add Task</TextBlock>
 
-        <TextBlock Grid.Row="1">Add any number of achievable tasks to help keep you on track toward achieving your goals.</TextBlock>
+        <TextBlock FontFamily="Old English Text MT" Grid.Row="1">Add any number of achievable tasks to help keep you on track toward achieving your goals.</TextBlock>
 
         <StackPanel Grid.Row="2">
             <TextBox Width="300" x:Name="taskBox"></TextBox>
-            <Button Width="100" x:Name="AddButton" Click="AddButton_Click">Add</Button>
+            <Button Width="100" Background="Goldenrod" FontFamily="Old English Text MT" x:Name="AddButton" Click="AddButton_Click">Add</Button>
             <ListView Width="300" x:Name="listView"/>
         </StackPanel>
 
@@ -30,8 +30,8 @@
                 <ColumnDefinition Width="5*"/>
             </Grid.ColumnDefinitions>
 
-            <Button x:Name="AddTasksButton" Margin="10" Grid.Column="0" Click="AddTasksButton_Click">Add Tasks</Button>
-            <Button x:Name="CancelButton" Margin="10" Grid.Column="1" Click="CancelButton_Click">Cancel</Button>
+            <Button x:Name="AddTasksButton" Background="Goldenrod" FontFamily="Old English Text MT" Margin="10" FontSize="15" Grid.Column="0" Click="AddTasksButton_Click">Add Tasks</Button>
+            <Button x:Name="CancelButton" Background="Goldenrod" FontFamily="Old English Text MT" Margin="10" FontSize="15" Grid.Column="1" Click="CancelButton_Click">Cancel</Button>
         </Grid>
     </Grid>
 </Window>

@@ -20,9 +20,9 @@
                 <RowDefinition Height="5*"/>
             </Grid.RowDefinitions>
             
-            <Button x:Name="YepButton" FontFamily="Old English Text MT" Margin="20" Grid.Row="0" Click="YepButton_Click">Yep!</Button>
+            <Button x:Name="YepButton" Background="Goldenrod" FontFamily="Old English Text MT" Margin="20" Grid.Row="0" Click="YepButton_Click">Yep!</Button>
 
-            <Button x:Name="NoButton" FontFamily="Old English Text MT" Margin="20" Grid.Row="1" Click="NoButton_Click">Nooooooo!</Button>
+            <Button x:Name="NoButton" Background="Goldenrod" FontFamily="Old English Text MT" Margin="20" Grid.Row="1" Click="NoButton_Click">Nooooooo!</Button>
         </Grid>
     </Grid>
     
