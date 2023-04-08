@@ -24,17 +24,14 @@
             </Grid.ColumnDefinitions>
 
             <StackPanel Grid.Column="0">
+                <Button x:Name="NameButton" Padding="3"  Margin="10" Click="NameButton_Click">Name</Button>
                 <Button x:Name="UploadPictureButton" Padding="3" Margin="10" Click="UploadPictureButton_Click">Upload Picture</Button>
                 <Button x:Name="WriteBiographyButton" Padding="3" Margin="10" Click="WriteBiographyButton_Click">Write Biography</Button>
                 <Button x:Name="ChooseStatsButton" Padding="3" Margin="10" Click="ChooseStatsButton_Click">Choose Stats</Button>
-                <Button x:Name="DefineStatsButton" Padding="3" Margin="10" Click="DefineStatsButton_Click">Define Stats</Button>
                 <Button x:Name="ChooseSkillsButton" Padding="3" Margin="10" Click="ChooseSkillsButton_Click">Choose Skills</Button>
-                <Button x:Name="DefineSkillsButton" Padding="3"  Margin="10" Click="DefineSkillsButton_Click">Define Skills</Button>
-                <Button x:Name="NameButton" Padding="3"  Margin="10" Click="NameButton_Click">Name</Button>
             </StackPanel>
 
-            <ListView Margin="15" Grid.Column="1">
-                <ListViewItem>asdf</ListViewItem>
+            <ListView x:Name="listView" Margin="15" Grid.Column="1">
             </ListView>
 
             <Grid Grid.Column="2">

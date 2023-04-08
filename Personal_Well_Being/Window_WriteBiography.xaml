@@ -16,8 +16,7 @@
         <TextBlock FontSize="18" TextAlignment="Center" Grid.Row="0">Choose Stats</TextBlock>
 
         <Grid Margin="20, 0, 20, 0" Grid.Row="1">
-
-            <!-- Code goes here -->
+            
             <StackPanel Orientation="Vertical">
                 <TextBlock Text="Describe yourself: "/>
                 <TextBox x:Name="BiographyTextBox"
