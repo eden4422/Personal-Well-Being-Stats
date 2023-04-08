@@ -16,28 +16,13 @@ using System.Windows.Shapes;
 namespace Personal_Well_Being
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Page_CharacterCreation.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Page_CharacterCreation : Page
     {
-        public MainWindow()
+        public Page_CharacterCreation()
         {
             InitializeComponent();
-        }
-
-        private void NewGameButton_Click(object sender, RoutedEventArgs e)
-        {
-            Main.Content = new Page_CharacterCreation();
-        }
-
-        private void LoadGameButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void QuitButton_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }
