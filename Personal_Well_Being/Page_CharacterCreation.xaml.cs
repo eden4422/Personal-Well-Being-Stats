@@ -88,14 +88,14 @@ namespace Personal_Well_Being
         {
             UserController UC = new();
             UC.CreateUser("testname");
-            UC.CurrentUser.AddStatToSheet("Mood", 1, 2);
-            UC.CurrentUser.AddStatToSheet("Fitness", 2, 4);
-            UC.CurrentUser.AddStatToSheet("Career", 3, 6);
-            UC.CurrentUser.AddStatToSheet("Friends", 4, 6);
-            UC.CurrentUser.AddStatToSheet("Romance", 5, 6);
-            UC.CurrentUser.AddStatToSheet("Spirituality", 6, 6);
-            UC.CurrentUser.AddStatToSheet("School", 7, 6);
-            UC.CurrentUser.AddStatToSheet("Family", 8, 6);
+            UC.CurrentUser.CurrentSheet.AddStat("Mood", 1, 2);
+            UC.CurrentUser.CurrentSheet.AddStat("Fitness", 2, 4);
+            UC.CurrentUser.CurrentSheet.AddStat("Career", 3, 6);
+            UC.CurrentUser.CurrentSheet.AddStat("Friends", 4, 6);
+            UC.CurrentUser.CurrentSheet.AddStat("Romance", 5, 6);
+            UC.CurrentUser.CurrentSheet.AddStat("Spirituality", 6, 6);
+            UC.CurrentUser.CurrentSheet.AddStat("School", 7, 6);
+            UC.CurrentUser.CurrentSheet.AddStat("Family", 8, 6);
             this.mainWindow.ChangePage(new Page_QuestBook(this.mainWindow, UC));
         }
     }
