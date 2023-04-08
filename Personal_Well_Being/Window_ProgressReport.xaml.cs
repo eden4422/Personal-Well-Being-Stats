@@ -19,9 +19,14 @@ namespace Personal_Well_Being
     /// </summary>
     public partial class Window_ProgressReport : Window
     {
-        public Window_ProgressReport()
+  
+        private UserController UC;
+
+        public Window_ProgressReport( UserController UC)
         {
             InitializeComponent();
+            this.UC = UC;
+            this.ObjectiveList.ItemsSource = UC.CurrentUser.CurrentSheet.TodoItems;
         }
     }
 }

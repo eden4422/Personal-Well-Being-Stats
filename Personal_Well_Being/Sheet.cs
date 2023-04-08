@@ -2,7 +2,9 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Collections.ObjectModel;
     using System.ComponentModel;
+    using System.Linq;
 
     /// <summary>
     /// Creates a sheet object to keep track of stats and skill
@@ -86,6 +88,22 @@
             }
         }
 
+        public ObservableCollection<AttributeItem> TodoItems
+        {
+            get
+            {
+                var allAttributes = this.Stats.Concat(this.Skills);
+                ObservableCollection<AttributeItem> collection = new ObservableCollection<AttributeItem>();
+                foreach (Attribute attribute in allAttributes)
+                {
+                    collection.Concat(attribute.UncompletedAttributeItems);
+                }
+                IEnumerable<AttributeItem> todoMilestones = from attributeitem in collection orderby attributeitem.Priority descending select attributeitem;
+                //return completedMilestones.ToList();
+                return new ObservableCollection<AttributeItem>(todoMilestones.ToList());
+            }
+        }
+
         /// <summary>
         /// Updates the total xp value if an attribute item xp is updated.
         /// </summary>
@@ -113,7 +131,7 @@
         /// <param name="newStat">The new stat to be added.</param>
         public void AddStat(string statName, int initialLevel, int priority)
         {
-            Attribute newStat = new Attribute(statName, initialLevel, priority);
+            Attribute newStat = new Attribute(statName, initialLevel);
             this.stats.Add(newStat);
             newStat.PropertyChanged += this.AttributeXpChange;
         }
@@ -124,7 +142,7 @@
         /// <param name="newSkill">The new skill to be added.</param>
         public void AddSkill(string statName, int initialLevel, int priority)
         {
-            Attribute newSkill = new Attribute(statName, initialLevel, priority);
+            Attribute newSkill = new Attribute(statName, initialLevel);
             this.skills.Add(newSkill);
             newSkill.PropertyChanged += this.AttributeXpChange;
         }
