@@ -13,11 +13,46 @@
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock FontSize="18" TextAlignment="Center" Grid.Row="0">Choose Stats</TextBlock>
+        <TextBlock FontSize="18" TextAlignment="Center" Grid.Row="0">Choose Skills</TextBlock>
 
         <Grid Margin="20, 0, 20, 0" Grid.Row="1">
 
-            <!-- Code goes here -->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0">
+                    <TextBlock FontSize="16">Select your Skills.</TextBlock>
+
+                    <CheckBox FontSize="14">Painting</CheckBox>
+                    <CheckBox FontSize="14">Writing</CheckBox>
+                    <CheckBox FontSize="14">Storytelling</CheckBox>
+                    <CheckBox FontSize="14">Dancing</CheckBox>
+                    <CheckBox FontSize="14">Dressmaking</CheckBox>
+                    <CheckBox FontSize="14">Blacksmithing</CheckBox>
+                    <CheckBox FontSize="14">Graphic Design</CheckBox>
+                    <CheckBox FontSize="14">Acting</CheckBox>
+                    <CheckBox FontSize="14">Knitting</CheckBox>
+                    <CheckBox FontSize="14">Jewelry-Making</CheckBox>
+                    <CheckBox FontSize="14">Leather-Working</CheckBox>
+                    <CheckBox FontSize="14">Pottery</CheckBox>
+                    <CheckBox FontSize="14">Hairstyling</CheckBox>
+                    <CheckBox FontSize="14">Origami</CheckBox>
+                    <CheckBox FontSize="14">Calligraphy</CheckBox>
+                </StackPanel>
+
+                <StackPanel Grid.Column="1">
+                    <TextBlock>Create Skills by entering them below:</TextBlock>
+                    <TextBox></TextBox>
+                    <Button Width="100">Add Skill</Button>
+                    
+                    <ListView Margin="15">
+                        <ListViewItem>Carpentry</ListViewItem>
+                    </ListView>
+                </StackPanel>
+            </Grid>
 
         </Grid>
 

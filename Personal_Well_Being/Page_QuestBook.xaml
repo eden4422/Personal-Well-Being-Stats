@@ -15,6 +15,6 @@
             <ColumnDefinition Width =".67*"/>
         </Grid.ColumnDefinitions>
         <DataGrid x:Name="AttributeGrid"></DataGrid>
-        <Button Grid.Column="1" x:Name "The Test Button"></Button>
+        <Button Grid.Column="1" x:Name="TheTestButton"></Button>
     </Grid>
 </Page>

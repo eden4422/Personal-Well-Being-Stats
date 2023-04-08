@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Personal_Well_Being"
         mc:Ignorable="d"
-        Title="Window_Name" Height="450" Width="800">
+        Title="Window_Name" Height="120" Width="400">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
-            <RowDefinition Height="8*"/>
+            <RowDefinition Height="3*"/>
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
 
@@ -37,8 +37,8 @@
                     <ColumnDefinition Width="5*"/>
                 </Grid.ColumnDefinitions>
 
-                <Button x:Name="AcceptButton" Margin="20" Grid.Column="0" Click="AcceptButton_Click">Accept</Button>
-                <Button x:Name="CancelButton" Margin="20" Grid.Column="1" Click="CancelButton_Click">Cancel</Button>
+                <Button x:Name="AcceptButton" Margin="2" Grid.Column="0" Click="AcceptButton_Click">Accept</Button>
+                <Button x:Name="CancelButton" Margin="2" Grid.Column="1" Click="CancelButton_Click">Cancel</Button>
             </Grid>
         </Grid>
     </Grid>
