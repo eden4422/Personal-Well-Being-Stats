@@ -18,6 +18,15 @@
         <Grid Margin="20, 0, 20, 0" Grid.Row="1">
 
             <!-- Code goes here -->
+            <StackPanel Orientation="Vertical">
+                <TextBlock Text="Describe yourself: "/>
+                <TextBox x:Name="BiographyTextBox"
+                         Height="250"
+                         AcceptsReturn="True"
+                         AcceptsTab="True"
+                         AutoWordSelection="True"
+                         TextWrapping="WrapWithOverflow"/>
+            </StackPanel>
 
         </Grid>
 
