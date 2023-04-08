@@ -99,8 +99,12 @@
                     collection.Concat(attribute.UncompletedAttributeItems);
                 }
                 IEnumerable<AttributeItem> todoMilestones = from attributeitem in collection orderby attributeitem.Priority descending select attributeitem;
-                //return completedMilestones.ToList();
-                return new ObservableCollection<AttributeItem>(todoMilestones.ToList());
+                ObservableCollection<AttributeItem> res = new();
+                foreach (AttributeItem item in todoMilestones)
+                {
+                    res.Add(item);
+                }
+                return res;
             }
         }
 

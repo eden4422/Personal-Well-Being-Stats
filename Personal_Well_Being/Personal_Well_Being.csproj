@@ -16,6 +16,7 @@
     <None Remove="image1.jpg" />
     <None Remove="journal.png" />
     <None Remove="parchment.jpg" />
+    <None Remove="victory.wav" />
   </ItemGroup>
 
   <ItemGroup>
@@ -28,6 +29,9 @@
     <Resource Include="Default Images\Cap Levi.jpg" />
     <Resource Include="Default Images\Gandalf.png" />
     <Resource Include="image1.jpg" />
+    <Content Include="victory.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>
