@@ -82,8 +82,8 @@
                     </ListView>
 
                     <StackPanel Orientation="Horizontal" Grid.Row="2">
-                        <Button Background="Goldenrod" FontSize="25" FontFamily="Old English Text MT" Padding="10" Margin="50,0, 20, 0" x:Name="AddMilestoneButton" Click="AddMilestoneButton_Click">Add Quest</Button>
-                        <Button Background="Goldenrod" FontSize="25" FontFamily="Old English Text MT" Padding="10" Margin="20,0, 20, 0" x:Name="CompleteMilestoneButton" Click="CompleteMilestoneButton_Click">Complete Quest</Button>
+                        <Button Background="Goldenrod" FontSize="20" FontFamily="Old English Text MT" Padding="10,0,10,0" Margin="20,0, 20, 0" x:Name="AddMilestoneButton" Click="AddMilestoneButton_Click">Add Quest</Button>
+                        <Button Background="Goldenrod" FontSize="20" FontFamily="Old English Text MT" Padding="10,0,10,0" Margin="20,0, 20, 0" x:Name="CompleteMilestoneButton" Click="CompleteMilestoneButton_Click">Complete Quest</Button>
                     </StackPanel>
                 </Grid>
 
@@ -105,8 +105,8 @@
                 </Grid>
 
                 <StackPanel Orientation="Horizontal" Grid.Row="2">
-                    <Button FontFamily="Old English Text MT" FontSize="25" Background="Goldenrod" Padding="10" Margin="10,0, 20, 0" x:Name="AddTaskButton">Add Quest</Button>
-                    <Button FontFamily="Old English Text MT" FontSize="25" Background="Goldenrod" Padding="10" Margin="0,0, 20, 0" x:Name="CompleteTaskButton">Complete Quest</Button>
+                    <Button FontFamily="Old English Text MT" FontSize="15" Background="Goldenrod" Padding="10,0,10,0" Margin="10,0, 5, 0" x:Name="AddTaskButton">Add Task</Button>
+                    <Button FontFamily="Old English Text MT" FontSize="15" Background="Goldenrod" Padding="10,0,10,0" Margin="0,0, 20, 0" x:Name="CompleteTaskButton">Complete Task</Button>
                 </StackPanel>
             </Grid>
         </Grid>
