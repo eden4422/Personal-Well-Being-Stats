@@ -23,5 +23,10 @@ namespace Personal_Well_Being
         {
             InitializeComponent();
         }
+
+        private void AcceptButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
