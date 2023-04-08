@@ -1,0 +1,25 @@
+﻿<Window x:Class="Personal_Well_Being.Window_Menu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Personal_Well_Being"
+        mc:Ignorable="d"
+        Title="Window_Menu" Height="250" Width="200"
+        ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25">MENU</TextBlock>
+
+        <StackPanel Grid.Row="1">
+            <Button x:Name="Continue" Margin="20, 5, 20, 15" Click="Continue_Button">Continue</Button>
+            <Button x:Name="SaveGameButton" Margin="20, 0, 20, 15" Click="SaveGameButton_Click">Save Game</Button>
+            <Button x:Name="StartScreenButton" Margin="20, 0, 20, 15" Click="StartScreenButton_Click">Back to Start Screen</Button>
+            <Button x:Name="QuitButtton" Margin="20, 0, 20, 15" Click="QuitButton_Click">Quit</Button>
+        </StackPanel>
+    </Grid>
+</Window>
