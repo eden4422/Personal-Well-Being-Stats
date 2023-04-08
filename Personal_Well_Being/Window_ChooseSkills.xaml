@@ -7,13 +7,14 @@
         mc:Ignorable="d"
         Title="Window_ChooseSkills" Height="450" Width="800">
     <Grid>
+ 
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
             <RowDefinition Height="8*"/>
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock FontSize="18" TextAlignment="Center" Grid.Row="0">Choose Skills</TextBlock>
+        <TextBlock FontSize="18" TextAlignment="Center" Foreground="Goldenrod" FontFamily="Old English Text MT" Grid.Row="0">Choose Skills</TextBlock>
 
         <Grid Margin="20, 0, 20, 0" Grid.Row="1">
 
@@ -68,8 +69,8 @@
                     <ColumnDefinition Width="5*"/>
                 </Grid.ColumnDefinitions>
 
-                <Button x:Name="AcceptButton" Margin="20" Grid.Column="0" Click="AcceptButton_Click">Accept</Button>
-                <Button x:Name="CancelButton" Margin="20" Grid.Column="1" Click="CancelButton_Click">Cancel</Button>
+                <Button x:Name="AcceptButton" Background="Goldenrod" FontFamily="Old English Text MT" FontSize="25" Margin="20" Grid.Column="0" Click="AcceptButton_Click">Accept</Button>
+                <Button x:Name="CancelButton" Background="Goldenrod" FontFamily="Old English Text MT" FontSize="25" Margin="20" Grid.Column="1" Click="CancelButton_Click">Cancel</Button>
             </Grid>
         </Grid>
     </Grid>
