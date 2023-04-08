@@ -1,16 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.ObjectModel;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace Personal_Well_Being
 {
@@ -22,11 +11,28 @@ namespace Personal_Well_Being
   
         private UserController UC;
 
+        private ObservableCollection<Milestone> milestoneList = new();
+
         public Window_ProgressReport( UserController UC)
         {
             InitializeComponent();
             this.UC = UC;
-            this.ObjectiveList.ItemsSource = UC.CurrentUser.CurrentSheet.TodoItems;
+            foreach (Attribute att in UC.CurrentUser.CurrentSheet.Stats)
+            {
+                foreach (Milestone ms in att.CurrentMilestones)
+                {
+                    milestoneList.Add(ms);
+                }
+            }
+
+            foreach (Attribute att in UC.CurrentUser.CurrentSheet.Skills)
+            {
+                foreach (Milestone ms in att.CurrentMilestones)
+                {
+                    milestoneList.Add(ms);
+                }
+            }
+            this.ObjectiveList.ItemsSource = milestoneList;
         }
     }
 }

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Personal_Well_Being"
         mc:Ignorable="d"
-        Title="Window_ProgressReport" Height="450" Width="800">
+        Title="Window_ProgressReport" Height="281" Width="421">
     <Grid>
         <DockPanel>
             <TabControl DockPanel.Dock="Top">
@@ -13,8 +13,8 @@
                     <ListView x:Name="ObjectiveList">
                         <ListView.View>
                             <GridView AllowsColumnReorder="false">
-                                <GridViewColumn Header="Objective" Width="Auto" DisplayMemberBinding="{Binding Description}" />
-                                <GridViewColumn Header="XPValue" Width="Auto" DisplayMemberBinding="{Binding XPValue}"/>
+                                <GridViewColumn Header="Objective" Width="200" DisplayMemberBinding="{Binding Description}" />
+                                <GridViewColumn Header="XPValue" Width="Auto" DisplayMemberBinding="{Binding XpValue}"/>
                             </GridView>
                         </ListView.View>
                     </ListView>
