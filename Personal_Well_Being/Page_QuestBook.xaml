@@ -9,15 +9,29 @@
       Title="Page1">
 
 
-    <Grid>
+    <Grid Margin="15">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width ="200"/>
             <ColumnDefinition Width ="*"/>
         </Grid.ColumnDefinitions>
-        <DockPanel>
-            <Label x:Name="UserName" DockPanel.Dock="Top" Height="50" FontSize="28"/>
+        
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
 
-            <TabControl DockPanel.Dock="Top">
+            <StackPanel Orientation="Horizontal" Grid.Row="0">
+                <Button x:Name="GearButton" Width="50" Height="50" Click="GearButton_Click" >
+                    <Image Source="C:\RealStats\Personal-Well-Being-Stats\Personal_Well_Being\gear.png"/>
+                </Button>
+
+                <Button x:Name="ProgressReport" Click="ProgressReport_Click">
+                    <Image Source="C:\RealStats\Personal-Well-Being-Stats\Personal_Well_Being\journal.png"/>
+                </Button>
+            </StackPanel>
+
+            <TabControl Grid.Row="1">
                 <TabItem Header="Stats" Grid.Column="0" Width="90">
                     <ItemsControl x:Name="StatList">
                         <ItemsControl.ItemTemplate>
@@ -51,9 +65,61 @@
                     </ItemsControl>
                 </TabItem>
             </TabControl>
-        </DockPanel>
-        <DockPanel Grid.Column="1">
-            
-        </DockPanel>
+        </Grid>
+        
+        
+        <Grid Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="6*"/>
+                <ColumnDefinition Width="4*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="40"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" Grid.Row="0">QUEST</TextBlock>
+
+                    <ListView Margin="10,0,10,10" Grid.Row="1">
+                        <ListViewItem>asdf</ListViewItem>
+                        <ListViewItem>asdf</ListViewItem>
+                        <ListViewItem>asdf</ListViewItem>
+                    </ListView>
+
+                    <Button Margin="20,0, 20, 0" x:Name="AddMilestoneButton" Grid.Row="2" Click="AddMilestoneButton_Click">Add Milestone</Button>
+                </Grid>
+                
+            </Grid>
+
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="70"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Row="0">Journey</TextBlock>
+
+                <Grid Margin="0,0,0,10" Grid.Row="1">
+                    
+                    <ListView Margin="10,0, 10, 0">
+                        <ListViewItem>asdf</ListViewItem>
+                        <ListViewItem>asdf</ListViewItem>
+                        <ListViewItem>asdf</ListViewItem>
+                    </ListView>
+
+                    <Button x:Name="CompletedButton" Margin="10,0, 10, 0" Background="LightBlue"  VerticalAlignment="Bottom" Click="CompletedButton_Click">Quest Completed</Button>
+                    
+                    
+                    
+                </Grid>
+
+                <Button Margin="20,0, 20, 0" x:Name="AddTaskButton" Grid.Row="2" Click="AddTaskButton_Click">Add Task</Button>
+            </Grid>
+        </Grid>
     </Grid>
 </Page>
