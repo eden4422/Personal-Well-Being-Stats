@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Controls;
 
 namespace Personal_Well_Being
 {
@@ -21,6 +22,34 @@ namespace Personal_Well_Being
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        /// <summary>
+        /// helps scroll through the images
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ScrollViewer_PreviewMouseWheel(object sender, System.Windows.Input.MouseWheelEventArgs e)
+        {
+            ScrollViewer scrollViewer = sender as ScrollViewer;
+            if (e.Delta < 0)
+            {
+                scrollViewer.LineDown();
+            }
+            else
+            {
+                scrollViewer.LineUp();
+            }
+        }
+
+        /// <summary>
+        /// chooses image in image selector
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Image_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            Image clickedImage = sender as Image;
         }
     }
 }

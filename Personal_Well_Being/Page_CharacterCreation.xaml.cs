@@ -1,6 +1,10 @@
+
 ﻿using System.Collections.Generic;
+﻿using Microsoft.Win32;
+using System;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media.Imaging;
 
 namespace Personal_Well_Being
 {
@@ -19,10 +23,15 @@ namespace Personal_Well_Being
 
         private void UploadPictureButton_Click(object sender, RoutedEventArgs e)
         {
-            Window_UploadPicture window = new Window_UploadPicture();
-            if(window.ShowDialog() == true )
-            {
+            // We dont need this right now since it is very much using the current uploaded picture.
+            //Window_UploadPicture window = new Window_UploadPicture();
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image files (*.jpg, *.jpeg, *.png) | *.jpg; *.jpeg; *.png";
 
+            if (openFileDialog.ShowDialog() == true)
+            {
+                string fileName = openFileDialog.FileName;
+                this.ImageDisplay.Source = new BitmapImage(new Uri(fileName));
             }
         }
 
@@ -110,7 +119,17 @@ namespace Personal_Well_Being
 
         private void DoneButton_Click(object sender, RoutedEventArgs e)
         {
-
+            UserController UC = new();
+            UC.CreateUser("testname");
+            UC.CurrentUser.AddStatToSheet("Mood", 1, 2);
+            UC.CurrentUser.AddStatToSheet("Fitness", 2, 4);
+            UC.CurrentUser.AddStatToSheet("Career", 3, 6);
+            UC.CurrentUser.AddStatToSheet("Friends", 4, 6);
+            UC.CurrentUser.AddStatToSheet("Romance", 5, 6);
+            UC.CurrentUser.AddStatToSheet("Spirituality", 6, 6);
+            UC.CurrentUser.AddStatToSheet("School", 7, 6);
+            UC.CurrentUser.AddStatToSheet("Family", 8, 6);
+            this.mainWindow.ChangePage(new Page_QuestBook(this.mainWindow, UC));
         }
     }
 }

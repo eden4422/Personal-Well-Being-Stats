@@ -25,7 +25,7 @@ namespace Personal_Well_Being
             this.Tasks = new List<AttributeItem>();
         }
 
-        internal int InitialValue { get; set; }
+        public int InitialValue { get; set; }
 
         internal int Priority { get; set; }
 
@@ -44,7 +44,7 @@ namespace Personal_Well_Being
             }
         }
 
-        internal string Name { get; set; }
+        public string Name { get; set; }
 
         internal List<AttributeItem> Milestones { get; }
 

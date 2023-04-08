@@ -33,6 +33,7 @@
                     <CheckBox x:Name="SpiritualityBox" FontSize="14">Spirituality</CheckBox>
                     <CheckBox x:Name="SchoolBox" FontSize="14">School</CheckBox>
                     <CheckBox x:Name="FamilyBox" FontSize="14">Family</CheckBox>
+
                 </StackPanel>
             </Grid>
 

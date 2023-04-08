@@ -4,8 +4,10 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Personal_Well_Being"
+        
         mc:Ignorable="d"
         Title="Window_UploadPicture" Height="450" Width="800">
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
@@ -17,7 +19,13 @@
 
         <Grid Margin="20, 0, 20, 0" Grid.Row="1">
 
-            <!-- Code goes here -->
+            <ScrollViewer VerticalScrollBarVisibility="Auto" PreviewMouseWheel="ScrollViewer_PreviewMouseWheel">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Default Images\Cap Levi.jpg"  MouseDown="Image_MouseDown" Height="260" Width="187"/>
+                    <Image Source="Default Images\Gandalf.png"  MouseDown="Image_MouseDown" Height="306" Width="378"/>
+                    <!-- add more images here -->
+                </StackPanel>
+            </ScrollViewer>
 
         </Grid>
 

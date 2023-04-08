@@ -1,8 +1,8 @@
 ﻿namespace Personal_Well_Being
 {
-    internal class UserController
+    public class UserController
     {
-        User? CurrentUser { get; set; }
+        internal User? CurrentUser { get; set; }
 
         public void CreateUser(string username)
         {
