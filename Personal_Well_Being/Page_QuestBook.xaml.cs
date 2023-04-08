@@ -15,6 +15,8 @@ namespace Personal_Well_Being
         private List<Attribute> Stats { get; set; }
         private List<Attribute> Skills { get; set; }
 
+        private Attribute? SelectedStat { get; set; }
+
         public Page_QuestBook(MainWindow mainWindow, UserController UC)
         {
             InitializeComponent();
@@ -41,7 +43,7 @@ namespace Personal_Well_Being
             {
                 milestoneDescription = window.mileStoneDescription;
 
-                // Connect to Backend here.
+                this.SelectedStat.AddMilestone(milestoneDescription, 50);
             }
         }
 
@@ -79,6 +81,21 @@ namespace Personal_Well_Being
         {
             Victory victory = new Victory();
             victory.Show();
+        }
+
+        private void StatList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            this.SelectedStat = (Attribute?)this.StatList.SelectedItem;
+            if (this.SelectedStat != null)
+            {
+                this.AddMilestoneButton.IsEnabled = true;
+                this.MilestoneList.ItemsSource = this.SelectedStat.Milestones;
+            }
+            else
+            {
+                this.AddMilestoneButton.IsEnabled = false;
+                this.MilestoneList.ItemsSource = null;
+            }
         }
     }
 }

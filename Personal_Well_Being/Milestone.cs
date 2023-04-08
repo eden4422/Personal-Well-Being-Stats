@@ -1,6 +1,7 @@
 ﻿// Author: Rick Roslof
 
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace Personal_Well_Being
 {
@@ -15,7 +16,7 @@ namespace Personal_Well_Being
         /// <param name="description">Description of item.</param>
         /// <param name="xpValue">XP value to return on completion.</param>
         /// <param name="parent">Reference to owner list.</param>
-        public Milestone(string description, int xpValue, List<AttributeItem> parent)
+        public Milestone(string description, int xpValue, ObservableCollection<AttributeItem> parent)
             : base(description, xpValue, parent)
         {
             this.IsCompleted = false;
