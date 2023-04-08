@@ -8,10 +8,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Default Images\Cap Levi.jpg" />
+    <None Remove="Default Images\Gandalf.jpg" />
+    <None Remove="Default Images\Gandalf.png" />
+    <None Remove="Default Images\Gladiator.jpg" />
     <None Remove="image1.jpg" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Default Images\Cap Levi.jpg" />
+    <Resource Include="Default Images\Gandalf.png" />
     <Resource Include="image1.jpg" />
   </ItemGroup>
 

@@ -1,5 +1,8 @@
-﻿using System.Windows;
+﻿using Microsoft.Win32;
+using System;
+using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media.Imaging;
 
 namespace Personal_Well_Being
 {
@@ -18,10 +21,15 @@ namespace Personal_Well_Being
 
         private void UploadPictureButton_Click(object sender, RoutedEventArgs e)
         {
-            Window_UploadPicture window = new Window_UploadPicture();
-            if(window.ShowDialog() == true )
-            {
+            // We dont need this right now since it is very much using the current uploaded picture.
+            //Window_UploadPicture window = new Window_UploadPicture();
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image files (*.jpg, *.jpeg, *.png) | *.jpg; *.jpeg; *.png";
 
+            if (openFileDialog.ShowDialog() == true)
+            {
+                string fileName = openFileDialog.FileName;
+                this.ImageDisplay.Source = new BitmapImage(new Uri(fileName));
             }
         }
 
