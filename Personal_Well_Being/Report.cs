@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿// Author: Rick Roslof
+
+using System.Collections.Generic;
 using System.ComponentModel;
 
 namespace Personal_Well_Being
@@ -6,14 +8,14 @@ namespace Personal_Well_Being
     internal class Report : INotifyPropertyChanged
     {
         /// <summary>
-        /// List of stat names, initial values, current values, and goal values.
+        /// List of stat names, priority, initial values, current values, and goal values.
         /// </summary>
-        public List<(string, int, int, int)> StatProgress { get; private set; } = new();
+        public List<(string, int, int, int, int)> StatProgress { get; private set; } = new();
 
         /// <summary>
-        /// List of skill names, initial values, current values, and goal values.
+        /// List of skill names, priority, initial values, current values, and goal values.
         /// </summary>
-        public List<(string, int, int, int)> SkillProgress { get; private set; } = new();
+        public List<(string, int, int, int, int)> SkillProgress { get; private set; } = new();
 
         /// <summary>
         /// Property changed event.
@@ -23,9 +25,7 @@ namespace Personal_Well_Being
         /// <summary>
         /// Updates stat and skill progress properties.
         /// </summary>
-        /// <param name="initial">Initial skill sheet.</param>
-        /// <param name="current">Current skill sheet.</param>
-        /// <param name="goal">Goal skill sheet.</param>
+        /// <param name="sheet">Current skill sheet.</param>
         public void Update(Sheet sheet)
         {
             // Update stats
@@ -34,7 +34,7 @@ namespace Personal_Well_Being
 
             foreach (Attribute attribute in stats)
             {
-                this.StatProgress.Add((attribute.Name, attribute.InitialValue, attribute.InitialValue + attribute.CompletedMilestones.Count, attribute.InitialValue + attribute.Milestones.Count));
+                this.StatProgress.Add((attribute.Name, attribute.Priority, attribute.InitialValue, attribute.InitialValue + attribute.CompletedMilestones.Count, attribute.InitialValue + attribute.Milestones.Count));
             }
 
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(StatProgress)));
@@ -46,7 +46,7 @@ namespace Personal_Well_Being
 
             foreach (Attribute attribute in skills)
             {
-                this.StatProgress.Add((attribute.Name, attribute.InitialValue, attribute.InitialValue + attribute.CompletedMilestones.Count, attribute.InitialValue + attribute.Milestones.Count));
+                this.StatProgress.Add((attribute.Name, attribute.Priority, attribute.InitialValue, attribute.InitialValue + attribute.CompletedMilestones.Count, attribute.InitialValue + attribute.Milestones.Count));
             }
 
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SkillProgress)));
