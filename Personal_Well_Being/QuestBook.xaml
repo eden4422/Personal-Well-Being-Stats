@@ -5,26 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Personal_Well_Being"
         mc:Ignorable="d"
-        Title="Window1" Height="500" Width="815">
-    <Grid Margin="0,0,0,21">
-        <TabControl TabStripPlacement="Right" Width="780" Margin="10,0,10,0">
-            <TabItem Header="Tab 1">
-                <!-- Content for Tab 1 goes here -->
-                <Grid>
-                    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Width="446" Margin="339,0,0,96">
-                        <DataGrid Width="306" Height="260">
-                            <!-- DataGrid columns and other properties -->
-                        </DataGrid>
-                    </ScrollViewer>
-                    <Label Content="XP:" Margin="301,372,300,0" FontFamily="Blackadder ITC" FontSize="35"></Label>
-                    <ProgressBar Minimum="0" Maximum="100" Margin="391,372,38,29"/>
-                    <Label Content="Stat:" Margin="87,79,514,293" FontFamily="Blackadder ITC" FontSize="35"></Label>
-                </Grid>
-            </TabItem>
-            <TabItem Header="Tab 2">
-                <!-- Content for Tab 2 goes here -->
-                <Label Content="Content for Tab 2"/>
-            </TabItem>
-        </TabControl>
+        Title="Quest Book" Height="500" Width="815">
+    <Grid Margin="0,0,0,21" Background="SaddleBrown">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="19*"/>
+            <ColumnDefinition Width="103*"/>
+            <ColumnDefinition Width="575*"/>
+            <ColumnDefinition Width="118*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Content for Tab 1 goes here -->
+        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Width="446" Margin="217,0,0,96" Grid.ColumnSpan="2" Grid.Column="2">
+            <DataGrid Width="306" Height="260">
+                <!-- DataGrid columns and other properties -->
+            </DataGrid>
+        </ScrollViewer>
+        <Button Content="Exit" Margin="74,311,457,96" Grid.ColumnSpan="2" Grid.Column="1" Click="Button_Click_1" ></Button>
+        <Image Source="Emblem.png" Margin="30,43,414,251" Grid.ColumnSpan="2" Grid.Column="1"></Image>
+        <Label Content="XP:" Margin="179,372,182,0" FontFamily="Blackadder ITC" FontSize="35" Grid.Column="2"></Label>
+        <ProgressBar Minimum="0" Maximum="100" Margin="269,372,38,29" Grid.ColumnSpan="2" Grid.Column="2"/>
+        <Label Content="Quest Log:" Margin="65,102,358,257" FontFamily="Blackadder ITC" Foreground="Goldenrod" FontSize="35" Grid.ColumnSpan="2" Grid.Column="1"></Label>
+        <Button Content="Report progress" Margin="73,232,457,176" Click="Button_Click" Grid.ColumnSpan="2" Grid.Column="1" />
     </Grid>
 </Window>
