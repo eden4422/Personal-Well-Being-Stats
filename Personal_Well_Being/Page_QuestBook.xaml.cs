@@ -24,14 +24,24 @@ namespace Personal_Well_Being
             this.Skills = UC.CurrentUser.CurrentSheet.Skills;
             this.StatList.ItemsSource = this.Stats;
             this.SkilList.ItemsSource = this.Skills;
+
+            // AddMilestone button becomes enabled when a stat or skill is selected
+            this.AddMilestoneButton.IsEnabled = false;
+
+            // AddTask button becomes enabled when a milestone is selected.
+            this.AddTaskButton.IsEnabled = false;
         }
 
         private void AddMilestoneButton_Click(object sender, System.Windows.RoutedEventArgs e)
         {
+            string milestoneDescription;
+
             Window_AddMilestone window = new Window_AddMilestone();
             if (window.ShowDialog() == true)
             {
+                milestoneDescription = window.mileStoneDescription;
 
+                // Connect to Backend here.
             }
         }
 
@@ -48,6 +58,8 @@ namespace Personal_Well_Being
                 {
                     taskListView.Items.Add(task);
                 }
+
+                // connect to backend here.
             }
         }
 
