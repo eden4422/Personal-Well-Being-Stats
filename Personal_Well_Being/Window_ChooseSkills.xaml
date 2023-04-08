@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Personal_Well_Being"
         mc:Ignorable="d"
-        Title="Window_ChooseSkills" Height="450" Width="800">
+        Title="Window_ChooseSkills" Height="450" Width="800" Background="Black">
     <Grid>
  
         <Grid.RowDefinitions>
@@ -14,7 +14,7 @@
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock FontSize="18" TextAlignment="Center" Foreground="Goldenrod" FontFamily="Old English Text MT" Grid.Row="0">Choose Skills</TextBlock>
+        <TextBlock FontSize="18" TextAlignment="Center" Foreground="Goldenrod" FontFamily="Old English Text MT" Grid.Row="0">Choose Your Skills</TextBlock>
 
         <Grid Margin="20, 0, 20, 0" Grid.Row="1">
 
@@ -25,27 +25,27 @@
                 </Grid.ColumnDefinitions>
 
                 <StackPanel Grid.Column="0">
-                    <TextBlock FontSize="16">Select your Skills.</TextBlock>
+                    <TextBlock Foreground="White" FontSize="16">Select Skills.</TextBlock>
 
-                    <CheckBox x:Name="Painting" FontSize="14" Content="Painting"></CheckBox>
-                    <CheckBox x:Name="Writing" FontSize="14" Content="Writing"></CheckBox>
-                    <CheckBox x:Name="Storytelling" FontSize="14" Content="Storytelling"></CheckBox>
-                    <CheckBox x:Name="Dancing" FontSize="14" Content="Dancing"></CheckBox>
-                    <CheckBox x:Name="Dressmaking" FontSize="14" Content="Dressmaking"></CheckBox>
-                    <CheckBox x:Name="Blacksmithing" FontSize="14" Content="Blacksmithing"></CheckBox>
-                    <CheckBox x:Name="Graphic" FontSize="14" Content="Graphic Design"></CheckBox>
-                    <CheckBox x:Name="Acting" FontSize="14" Content="Acting"></CheckBox>
-                    <CheckBox x:Name="Knitting" FontSize="14" Content="Knitting"></CheckBox>
-                    <CheckBox x:Name="JewelryMaking" FontSize="14" Content="Jewelry-Making"></CheckBox>
-                    <CheckBox x:Name="LeatherWorking" FontSize="14" Content="Leather-Working"></CheckBox>
-                    <CheckBox x:Name="Pottery" FontSize="14" Content="Pottery"></CheckBox>
-                    <CheckBox x:Name="Hairstyling" FontSize="14" Content="Hairstyling"></CheckBox>
-                    <CheckBox x:Name="Origami" FontSize="14" Content="Origami"></CheckBox>
-                    <CheckBox x:Name="Calligraphy" FontSize="14" Content="Calligraphy"></CheckBox>
+                    <CheckBox Foreground="white" x:Name="Painting" FontSize="14" Content="Painting"></CheckBox>
+                    <CheckBox Foreground="white" x:Name="Writing" FontSize="14" Content="Writing"></CheckBox>
+                    <CheckBox Foreground="white" x:Name="Storytelling" FontSize="14" Content="Storytelling"></CheckBox>
+                    <CheckBox Foreground="white" x:Name="Dancing" FontSize="14" Content="Dancing"></CheckBox>
+                    <CheckBox Foreground="white" x:Name="Dressmaking" FontSize="14" Content="Dressmaking"></CheckBox>
+                    <CheckBox Foreground="white" x:Name="Blacksmithing" FontSize="14" Content="Blacksmithing"></CheckBox>
+                    <CheckBox Foreground="white" x:Name="Graphic" FontSize="14" Content="Graphic Design"></CheckBox>
+                    <CheckBox Foreground="white" x:Name="Acting" FontSize="14" Content="Acting"></CheckBox>
+                    <CheckBox Foreground="white" x:Name="Knitting" FontSize="14" Content="Knitting"></CheckBox>
+                    <CheckBox Foreground="white" x:Name="JewelryMaking" FontSize="14" Content="Jewelry-Making"></CheckBox>
+                    <CheckBox Foreground="white" x:Name="LeatherWorking" FontSize="14" Content="Leather-Working"></CheckBox>
+                    <CheckBox Foreground="white" x:Name="Pottery" FontSize="14" Content="Pottery"></CheckBox>
+                    <CheckBox Foreground="white" x:Name="Hairstyling" FontSize="14" Content="Hairstyling"></CheckBox>
+                    <CheckBox Foreground="white" x:Name="Origami" FontSize="14" Content="Origami"></CheckBox>
+                    <CheckBox Foreground="white" x:Name="Calligraphy" FontSize="14" Content="Calligraphy"></CheckBox>
                 </StackPanel>
 
                 <StackPanel Grid.Column="1">
-                    <TextBlock>Create Skills by entering them below:</TextBlock>
+                    <TextBlock Foreground="White">Create Skills by entering them below:</TextBlock>
                     <TextBox x:Name="SkillInput"></TextBox>
                     <Button x:Name="AddSkill" Width="100" Click="AddSkill_Button">Add Skill</Button>
 
