@@ -51,6 +51,8 @@ namespace Personal_Well_Being
             //Window_UploadPicture window = new Window_UploadPicture();
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Image files (*.jpg, *.jpeg, *.png) | *.jpg; *.jpeg; *.png";
+            openFileDialog.InitialDirectory = System.IO.Path.Combine(Environment.CurrentDirectory, @"Default Images");
+
 
             if (openFileDialog.ShowDialog() == true)
             {
