@@ -14,8 +14,8 @@
         private string bio;
         private int totalLevel;
         private int totalXP;
-        private List<Attribute> stats;
-        private List<Attribute> skills;
+        private ObservableCollection<Attribute> stats;
+        private ObservableCollection<Attribute> skills;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Sheet"/> class.
@@ -25,8 +25,8 @@
             bio = string.Empty;
             totalLevel = 0;
             totalXP = 0;
-            stats = new List<Attribute> ();
-            skills = new List<Attribute> ();
+            stats = new ObservableCollection<Attribute> ();
+            skills = new ObservableCollection<Attribute> ();
         }
 
         /// <summary>
@@ -69,7 +69,7 @@
         /// <summary>
         /// Gets list of stats.
         /// </summary>
-        public List<Attribute> Stats
+        public ObservableCollection<Attribute> Stats
         {
             get
             {
@@ -80,7 +80,7 @@
         /// <summary>
         /// Gets list of skills.
         /// </summary>
-        public List<Attribute> Skills
+        public ObservableCollection<Attribute> Skills
         {
             get
             {

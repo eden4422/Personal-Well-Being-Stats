@@ -114,6 +114,7 @@ namespace Personal_Well_Being
                 this.TotalXP += e.XpValue;
                 this.RefreshMilestones();
             }
+            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(CurrentValue)));
         }
 
         private void RefreshMilestones()

@@ -32,7 +32,7 @@
             </StackPanel>
 
             <TabControl Grid.Row="1">
-                <TabItem Header="Stats" FontFamily="Old English Text MT" Grid.Column="0" Width="90">
+                <TabItem Header="Stats" FontFamily="Old English Text MT" FontSize="22" Grid.Column="0" Width="90">
                     <ListView x:Name="StatList" SelectionChanged="StatList_SelectionChanged">
                         <ListView.View>
                             <GridView AllowsColumnReorder="false">
@@ -43,7 +43,7 @@
                     </ListView>
                 </TabItem>
                 <TabItem FontFamily="Old English Text MT" Header="Skills" Width="90">
-                    <ListView x:Name="SkillList" SelectionChanged="StatList_SelectionChanged">
+                    <ListView x:Name="SkillList" SelectionChanged="SkillList_SelectionChanged">
                         <ListView.View>
                             <GridView AllowsColumnReorder="false">
                                 <GridViewColumn Header="Stat" Width="Auto" DisplayMemberBinding="{Binding Name}" />
