@@ -9,7 +9,7 @@
     <Grid>
         <DockPanel>
             <TabControl DockPanel.Dock="Top">
-                <TabItem Header="Stuff that needs been done">
+                <TabItem Header="Stuff that needs been done" FontFamily="Old English Text MT">
                     <ListView x:Name="ObjectiveList">
                         <ListView.View>
                             <GridView AllowsColumnReorder="false">
@@ -19,13 +19,13 @@
                         </ListView.View>
                     </ListView>
                 </TabItem>
-                <TabItem Header="Stuff thats been done did">
+                <TabItem Header="Stuff thats been done did" FontFamily="Old English Text MT">
                     <ListView x:Name="CompletedList">
                         <Label>Total Milestones completed:</Label>
                         <Label>Tasks completed:</Label>
                         <Label>Total XP gained:</Label>
                         <Label>Breakdown by stat:</Label>
-                        <ListView x:Name="StatBreakdown" Width="240">
+                        <ListView x:Name="StatBreakdown" Width="392">
                             <ListView.View>
                                 <GridView AllowsColumnReorder="false">
                                     <GridViewColumn Header="Stat" Width="Auto" DisplayMemberBinding="{Binding Description}" />
