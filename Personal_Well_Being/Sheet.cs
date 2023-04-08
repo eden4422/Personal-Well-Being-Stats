@@ -88,7 +88,7 @@
             }
         }
 
-        public ObservableCollection<AttributeItem> ProgressSummary
+        public ObservableCollection<AttributeItem> TodoItems
         {
             get
             {

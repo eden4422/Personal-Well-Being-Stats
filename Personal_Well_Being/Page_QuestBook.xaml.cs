@@ -73,7 +73,7 @@ namespace Personal_Well_Being
 
         private void ProgressReport_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            Window_ProgressReport window = new Window_ProgressReport();
+            Window_ProgressReport window = new Window_ProgressReport(this.UC);
             window.Show();
         }
 
