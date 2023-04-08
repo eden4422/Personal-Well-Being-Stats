@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Windows.Controls;
 
 namespace Personal_Well_Being
@@ -20,7 +21,14 @@ namespace Personal_Well_Being
             InitializeComponent();
             this.UC = UC;
             this.mainWindow = mainWindow;
-            this.UserName.Content = UC.CurrentUser.Name;
+            try
+            {
+                this.UserName.Content = UC.CurrentUser.Name;
+            }
+            catch(ArgumentNullException e)
+            {
+                this.UserName.Content = "N/A";
+            }
             this.Stats = UC.CurrentUser.CurrentSheet.Stats;
             this.Skills = UC.CurrentUser.CurrentSheet.Skills;
             this.StatList.ItemsSource = this.Stats;
