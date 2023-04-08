@@ -87,7 +87,7 @@ namespace Personal_Well_Being
         private void CompletedButton_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             Victory victory = new Victory();
-            taskListView.Items.Remove(taskListView.SelectedItem);
+            TaskList.Items.Remove(TaskList.SelectedItem);
             victory.Show();
         }
 
