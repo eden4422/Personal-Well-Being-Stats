@@ -7,6 +7,37 @@
         mc:Ignorable="d"
         Title="Window_ProgressReport" Height="450" Width="800">
     <Grid>
-        
+        <DockPanel>
+            <TabControl DockPanel.Dock="Top">
+                <TabItem Header="Stuff that needs been done">
+                    <ListView x:Name="ObjectiveList">
+                        <ListView.View>
+                            <GridView AllowsColumnReorder="false">
+                                <GridViewColumn Header="Objective" Width="Auto" DisplayMemberBinding="{Binding Description}" />
+                                <GridViewColumn Header="XPValue" Width="Auto" DisplayMemberBinding="{Binding XPValue}"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </TabItem>
+                <TabItem Header="Stuff thats been done did">
+                    <ListView x:Name="CompletedList">
+                        <Label>Total Milestones completed:</Label>
+                        <Label>Tasks completed:</Label>
+                        <Label>Total XP gained:</Label>
+                        <Label>Breakdown by stat:</Label>
+                        <ListView x:Name="StatBreakdown" Width="240">
+                            <ListView.View>
+                                <GridView AllowsColumnReorder="false">
+                                    <GridViewColumn Header="Stat" Width="Auto" DisplayMemberBinding="{Binding Description}" />
+                                    <GridViewColumn Header="Tasks done" Width="Auto" DisplayMemberBinding="{Binding XPValue}"/>
+                                    <GridViewColumn Header="Levels gained" Width="Auto" DisplayMemberBinding="{Binding XPValue}"/>
+                                    <GridViewColumn Header="XP gained" Width="Auto" DisplayMemberBinding="{Binding XPValue}"/>
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+                    </ListView>
+                </TabItem>
+            </TabControl>
+        </DockPanel>
     </Grid>
 </Window>

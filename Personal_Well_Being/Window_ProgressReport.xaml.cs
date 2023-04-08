@@ -19,9 +19,14 @@ namespace Personal_Well_Being
     /// </summary>
     public partial class Window_ProgressReport : Window
     {
-        public Window_ProgressReport()
+        private MainWindow mainWindow;
+        private UserController UC;
+
+        public Window_ProgressReport(MainWindow mainWindow, UserController UC)
         {
             InitializeComponent();
+            this.mainWindow = mainWindow;
+            this.UC = UC;
         }
     }
 }
