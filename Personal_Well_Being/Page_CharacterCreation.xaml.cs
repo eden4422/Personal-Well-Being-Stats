@@ -14,11 +14,13 @@ namespace Personal_Well_Being
     public partial class Page_CharacterCreation : Page
     {
         private MainWindow mainWindow;
+        private UserController UC;
 
         public Page_CharacterCreation(MainWindow mainWindow)
         {
             InitializeComponent();
             this.mainWindow = mainWindow;
+            this.UC = new UserController();
         }
 
         private void UploadPictureButton_Click(object sender, RoutedEventArgs e)
@@ -55,19 +57,104 @@ namespace Personal_Well_Being
             bool? school = false;
             bool? family = false;
 
+            // please maybechange the nullability of these bools? 
+            // also, for now we are initiating everything at priority and starting level 0, perhaps within the window we additionally,
+            // if something is selected, initialize those starting parameters
             Window_ChooseStats window = new Window_ChooseStats();
             if(window.ShowDialog() == true )
             {
                 mood = window.mood;
+                if(mood != null)
+                {
+                    if ((bool)mood)
+                    {
+                        if(UC.CurrentUser != null)
+                        {
+                            UC.CurrentUser.CurrentSheet.AddStat("Mood", 0, 0);
+                        }
+                    }
+                }
                 fitness = window.fitness;
+                if (fitness != null)
+                {
+                    if ((bool)fitness)
+                    {
+                        if (UC.CurrentUser != null)
+                        {
+                            UC.CurrentUser.CurrentSheet.AddStat("Fitness", 0, 0);
+                        }
+                    }
+                }
                 career = window.career;
+                if (career != null)
+                {
+                    if ((bool)career)
+                    {
+                        if (UC.CurrentUser != null)
+                        {
+                            UC.CurrentUser.CurrentSheet.AddStat("Career", 0, 0);
+                        }
+                    }
+                }
                 friends = window.friends;
+                if (friends != null)
+                {
+                    if ((bool)friends)
+                    {
+                        if (UC.CurrentUser != null)
+                        {
+                            UC.CurrentUser.CurrentSheet.AddStat("Friend", 0, 0);
+                        }
+                    }
+                }
                 companionship = window.companionship;
-                spirituality= window.spirituality;
-                school = window.school;
-                family = window.family;
+                if (companionship != null) // maybe change var name here
+                {
+                    if ((bool)companionship)
+                    {
+                        if (UC.CurrentUser != null)
+                        {
+                            UC.CurrentUser.CurrentSheet.AddStat("Romance", 0, 0);
+                        }
+                    }
+                }
+                spirituality = window.spirituality;
+                if (spirituality != null) 
+                {
+                    if ((bool)spirituality)
+                    {
+                        if (UC.CurrentUser != null)
+                        {
+                            UC.CurrentUser.CurrentSheet.AddStat("Spirituality", 0, 0);
+                        }
+                    }
+                }
 
-                // LINK TO BACKEND HERE
+                school = window.school;
+                if (school != null) 
+                {
+                    if ((bool)school)
+                    {
+                        if (UC.CurrentUser != null)
+                        {
+                            UC.CurrentUser.CurrentSheet.AddStat("School", 0, 0);
+                        }
+                    }
+
+                }
+                family = window.family;
+                if (family != null) 
+                {
+                    if ((bool)family)
+                    {
+                        if (UC.CurrentUser != null)
+                        {
+                            UC.CurrentUser.CurrentSheet.AddStat("Family", 0, 0);
+                        }
+                    }
+
+                }
+
             }
         }
 
@@ -88,8 +175,14 @@ namespace Personal_Well_Being
             if (window.ShowDialog() == true )
             {
                 // this is a list of strings
-                skills = window.skills;
-
+                if (UC.CurrentUser != null)
+                {
+                    foreach (string skill in window.skills)
+                    {
+                        UC.CurrentUser.CurrentSheet.AddSkill(skill, 0, 0);
+                    }
+                }
+               
                 // LINK TO BACKEND HERE
             }
         }
@@ -108,7 +201,7 @@ namespace Personal_Well_Being
             Window_Name window = new Window_Name();
             if (window.ShowDialog() == true )
             {
-
+                this.UC.CreateUser(window.InputName);
             }
         }
 
@@ -119,17 +212,7 @@ namespace Personal_Well_Being
 
         private void DoneButton_Click(object sender, RoutedEventArgs e)
         {
-            UserController UC = new();
-            UC.CreateUser("testname");
-            UC.CurrentUser.CurrentSheet.AddStat("Mood", 1, 2);
-            UC.CurrentUser.CurrentSheet.AddStat("Fitness", 2, 4);
-            UC.CurrentUser.CurrentSheet.AddStat("Career", 3, 6);
-            UC.CurrentUser.CurrentSheet.AddStat("Friends", 4, 6);
-            UC.CurrentUser.CurrentSheet.AddStat("Romance", 5, 6);
-            UC.CurrentUser.CurrentSheet.AddStat("Spirituality", 6, 6);
-            UC.CurrentUser.CurrentSheet.AddStat("School", 7, 6);
-            UC.CurrentUser.CurrentSheet.AddStat("Family", 8, 6);
-            this.mainWindow.ChangePage(new Page_QuestBook(this.mainWindow, UC));
+            this.mainWindow.ChangePage(new Page_QuestBook(this.mainWindow, this.UC));
         }
     }
 }
