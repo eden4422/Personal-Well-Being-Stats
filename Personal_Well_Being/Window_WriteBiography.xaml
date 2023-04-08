@@ -13,7 +13,7 @@
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock FontSize="18" Foreground="Goldenrod" FontFamily="Old English Text MT"  TextAlignment="Center" Grid.Row="0">Choose Stats</TextBlock>
+        <TextBlock FontSize="18" Foreground="Goldenrod" FontFamily="Old English Text MT"  TextAlignment="Center" Grid.Row="0">Write Biography</TextBlock>
 
         <Grid Margin="20, 0, 20, 0" Grid.Row="1">
             
