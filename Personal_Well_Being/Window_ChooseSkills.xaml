@@ -26,29 +26,29 @@
                 <StackPanel Grid.Column="0">
                     <TextBlock FontSize="16">Select your Skills.</TextBlock>
 
-                    <CheckBox FontSize="14">Painting</CheckBox>
-                    <CheckBox FontSize="14">Writing</CheckBox>
-                    <CheckBox FontSize="14">Storytelling</CheckBox>
-                    <CheckBox FontSize="14">Dancing</CheckBox>
-                    <CheckBox FontSize="14">Dressmaking</CheckBox>
-                    <CheckBox FontSize="14">Blacksmithing</CheckBox>
-                    <CheckBox FontSize="14">Graphic Design</CheckBox>
-                    <CheckBox FontSize="14">Acting</CheckBox>
-                    <CheckBox FontSize="14">Knitting</CheckBox>
-                    <CheckBox FontSize="14">Jewelry-Making</CheckBox>
-                    <CheckBox FontSize="14">Leather-Working</CheckBox>
-                    <CheckBox FontSize="14">Pottery</CheckBox>
-                    <CheckBox FontSize="14">Hairstyling</CheckBox>
-                    <CheckBox FontSize="14">Origami</CheckBox>
-                    <CheckBox FontSize="14">Calligraphy</CheckBox>
+                    <CheckBox x:Name="Painting" FontSize="14" Content="Painting"></CheckBox>
+                    <CheckBox x:Name="Writing" FontSize="14" Content="Writing"></CheckBox>
+                    <CheckBox x:Name="Storytelling" FontSize="14" Content="Storytelling"></CheckBox>
+                    <CheckBox x:Name="Dancing" FontSize="14" Content="Dancing"></CheckBox>
+                    <CheckBox x:Name="Dressmaking" FontSize="14" Content="Dressmaking"></CheckBox>
+                    <CheckBox x:Name="Blacksmithing" FontSize="14" Content="Blacksmithing"></CheckBox>
+                    <CheckBox x:Name="Graphic" FontSize="14" Content="Graphic Design"></CheckBox>
+                    <CheckBox x:Name="Acting" FontSize="14" Content="Acting"></CheckBox>
+                    <CheckBox x:Name="Knitting" FontSize="14" Content="Knitting"></CheckBox>
+                    <CheckBox x:Name="JewelryMaking" FontSize="14" Content="Jewelry-Making"></CheckBox>
+                    <CheckBox x:Name="LeatherWorking" FontSize="14" Content="Leather-Working"></CheckBox>
+                    <CheckBox x:Name="Pottery" FontSize="14" Content="Pottery"></CheckBox>
+                    <CheckBox x:Name="Hairstyling" FontSize="14" Content="Hairstyling"></CheckBox>
+                    <CheckBox x:Name="Origami" FontSize="14" Content="Origami"></CheckBox>
+                    <CheckBox x:Name="Calligraphy" FontSize="14" Content="Calligraphy"></CheckBox>
                 </StackPanel>
 
                 <StackPanel Grid.Column="1">
                     <TextBlock>Create Skills by entering them below:</TextBlock>
-                    <TextBox></TextBox>
-                    <Button Width="100">Add Skill</Button>
+                    <TextBox x:Name="SkillInput"></TextBox>
+                    <Button x:Name="AddSkill" Width="100" Click="AddSkill_Button">Add Skill</Button>
                     
-                    <ListView Margin="15">
+                    <ListView x:Name="listView" Margin="15">
                         <ListViewItem>Carpentry</ListViewItem>
                     </ListView>
                 </StackPanel>
