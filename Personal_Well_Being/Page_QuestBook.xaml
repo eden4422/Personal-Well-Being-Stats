@@ -14,7 +14,7 @@
             <ColumnDefinition Width ="200"/>
             <ColumnDefinition Width ="*"/>
         </Grid.ColumnDefinitions>
-        
+
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="50"/>
@@ -66,8 +66,8 @@
                 </TabItem>
             </TabControl>
         </Grid>
-        
-        
+
+
         <Grid Grid.Column="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="6*"/>
@@ -92,7 +92,7 @@
 
                     <Button Margin="20,0, 20, 0" x:Name="AddMilestoneButton" Grid.Row="2" Click="AddMilestoneButton_Click">Add Milestone</Button>
                 </Grid>
-                
+
             </Grid>
 
             <Grid Grid.Column="1">
@@ -105,7 +105,7 @@
                 <TextBlock FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Row="0">Journey</TextBlock>
 
                 <Grid Margin="0,0,0,10" Grid.Row="1">
-                    
+
                     <ListView x:Name="taskListView" Margin="10,0, 10, 0">
                         <ListViewItem>asdf</ListViewItem>
                         <ListViewItem>asdf</ListViewItem>
@@ -113,12 +113,12 @@
                     </ListView>
 
                     <Button x:Name="CompletedButton" Margin="10,0, 10, 0" Background="LightBlue"  VerticalAlignment="Bottom" Click="CompletedButton_Click">Quest Completed</Button>
-                    
-                    
-                    
+
+
+
                 </Grid>
 
-                <Button Margin="20,0, 20, 0" x:Name="AddTaskButton" Grid.Row="2" Click="AddTaskButton_Click">Add Task</Button>
+                <Button Margin="20,0,20,0" x:Name="AddTaskButton" Grid.Row="2" Click="AddTaskButton_Click" Height="40" VerticalAlignment="Top">Add Task</Button>
             </Grid>
         </Grid>
     </Grid>

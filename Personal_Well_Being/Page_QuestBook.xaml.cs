@@ -21,17 +21,6 @@ namespace Personal_Well_Being
             InitializeComponent();
             this.UC = UC;
             this.mainWindow = mainWindow;
-<<<<<<< HEAD
-            try
-            {
-                this.UserName.Content = UC.CurrentUser.Name;
-            }
-            catch(ArgumentNullException e)
-            {
-                this.UserName.Content = "N/A";
-            }
-=======
->>>>>>> 19f1229e3316be6477ab9f0c228e6d598e34f8a8
             this.Stats = UC.CurrentUser.CurrentSheet.Stats;
             this.Skills = UC.CurrentUser.CurrentSheet.Skills;
             this.StatList.ItemsSource = this.Stats;
@@ -78,6 +67,7 @@ namespace Personal_Well_Being
         private void CompletedButton_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             Victory victory = new Victory();
+            taskListView.Items.Remove(taskListView.SelectedItem);
             victory.Show();
         }
     }
