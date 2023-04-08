@@ -36,9 +36,9 @@
                     <TextBlock FontSize="50" FontFamily ="Old English Text MT" Foreground="Goldenrod" TextAlignment="Center" Grid.Row="0">Real Stats</TextBlock>
 
                     <StackPanel Grid.Row="1">
-                        <Button x:Name="NewGameButton" Margin="10" Click="NewGameButton_Click">New Game</Button>
-                        <Button x:Name="LoadGameButton" Margin="10" Click="LoadGameButton_Click">Load Game</Button>
-                        <Button x:Name="QuitButton" Margin="10" Click="QuitButton_Click">Quit</Button>
+                        <Button x:Name="NewGameButton" Background="Goldenrod" FontFamily="Old English Text MT" Margin="10" Click="NewGameButton_Click">New Game</Button>
+                        <Button x:Name="LoadGameButton" Background="Goldenrod" FontFamily="Old English Text MT" Margin="10" Click="LoadGameButton_Click">Load Game</Button>
+                        <Button x:Name="QuitButton" Background="Goldenrod" FontFamily="Old English Text MT" Margin="10" Click="QuitButton_Click">Quit</Button>
                     </StackPanel>
                 </Grid>
             </Border>
