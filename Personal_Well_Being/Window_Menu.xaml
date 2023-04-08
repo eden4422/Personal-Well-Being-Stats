@@ -13,13 +13,13 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25">MENU</TextBlock>
+        <TextBlock FontFamily="Old English Text MT" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25">MENU</TextBlock>
 
         <StackPanel Grid.Row="1">
-            <Button x:Name="Continue" Margin="20, 5, 20, 15" Click="Continue_Button">Continue</Button>
-            <Button x:Name="SaveGameButton" Margin="20, 0, 20, 15" Click="SaveGameButton_Click">Save Game</Button>
-            <Button x:Name="StartScreenButton" Margin="20, 0, 20, 15" Click="StartScreenButton_Click">Back to Start Screen</Button>
-            <Button x:Name="QuitButtton" Margin="20, 0, 20, 15" Click="QuitButton_Click">Quit</Button>
+            <Button x:Name="Continue" FontFamily="Old English Text MT" Margin="20, 5, 20, 15" Click="Continue_Button">Continue</Button>
+            <Button x:Name="SaveGameButton" FontFamily="Old English Text MT" Margin="20, 0, 20, 15" Click="SaveGameButton_Click">Save Game</Button>
+            <Button x:Name="StartScreenButton" FontFamily="Old English Text MT" Margin="20, 0, 20, 15" Click="StartScreenButton_Click">Back to Start Screen</Button>
+            <Button x:Name="QuitButtton" FontFamily="Old English Text MT" Margin="20, 0, 20, 15" Click="QuitButton_Click">Quit</Button>
         </StackPanel>
     </Grid>
 </Window>

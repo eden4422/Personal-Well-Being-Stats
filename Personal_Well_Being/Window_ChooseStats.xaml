@@ -1,9 +1,8 @@
 ﻿<Window x:Class="Personal_Well_Being.Window_ChooseStats"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Personal_Well_Being"
         mc:Ignorable="d"
         Title="Window_ChooseStats" Height="450" Width="800" Background="Black">
     <Grid>
@@ -23,18 +22,28 @@
                 </Grid.ColumnDefinitions>
                 
                 <StackPanel Grid.Column="0">
+
                     <TextBlock Foreground="White" FontSize="16">Select the Stats that mean the most to you.</TextBlock>
-                
-                    <CheckBox Foreground="white" x:Name="MoodBox" FontSize="14">Mood</CheckBox>
-                    <CheckBox Foreground="white" x:Name="FitnessBox" FontSize="14">Fitness</CheckBox>
-                    <CheckBox Foreground="white" x:Name="CareerBox" FontSize="14">Career</CheckBox>
-                    <CheckBox Foreground="white" x:Name="FriendsBox" FontSize="14">Friends</CheckBox>
-                    <CheckBox Foreground="white" x:Name="CompanionshipBox" FontSize="14">Companionship</CheckBox>
-                    <CheckBox Foreground="white" x:Name="SpiritualityBox" FontSize="14">Spirituality</CheckBox>
-                    <CheckBox Foreground="white" x:Name="SchoolBox" FontSize="14">School</CheckBox>
-                    <CheckBox Foreground="white" x:Name="FamilyBox" FontSize="14">Family</CheckBox>
+
+                    <CheckBox Foreground="white" x:Name="MoodBox" FontSize="14" ToolTip="your mood can influence perception, motivation, decision-making, social interactions, and even more basic cognitive processes like memory and attention.">Mood</CheckBox>
+                    <CheckBox Foreground="white" x:Name="FitnessBox" FontSize="14" ToolTip="Being physically active can improve your brain health, help manage weight, reduce the risk of disease, strengthen bones &#x0d; and muscles, and improve your ability to do everyday activities.&#x0d;Adults who sit less and do any amount of moderate-to-vigorous physical activity gain some health benefits.">Fitness</CheckBox>
+                    <CheckBox Foreground="white" x:Name="CareerBox" FontSize="14" ToolTip="Career can be defined as the journey of our work-life. It is what we do and forms an important part of our life's goals, and objectives.">Career</CheckBox>
+                    <CheckBox Foreground="white" x:Name="FriendsBox" FontSize="14" ToolTip="Friends can help you celebrate good times and provide support during bad times.&#x0d;Friends prevent isolation and loneliness and give you a chance to offer needed companionship, too.&#x0d;Friends can also: Increase your sense of belonging and purpose.">Social</CheckBox>
+                    <CheckBox Foreground="white" x:Name="CompanionshipBox" FontSize="14" ToolTip="Having good company around should make you feel relaxed, comfortable and keep your mind positively engaged.&#x0d;Other mental benefits of companionship are to: Prevent loneliness; Avoid social isolation.">Romance</CheckBox>
+                    <CheckBox Foreground="white" x:Name="SpiritualityBox" FontSize="14" ToolTip="It encourages people to have better relationships with themselves, others, and the unknown. &#x0d; Spirituality can help you deal with stress by giving you a sense of peace, purpose, and forgiveness. &#x0d;It often becomes more important in times of emotional stress or illness.">Spirituality</CheckBox>
+                    <CheckBox Foreground="white" x:Name="SchoolBox" FontSize="14" ToolTip="Learning is an important part of personal development, and one of the most rewarding aspects of learning is that it helps you understand the world around you.&#x0d;By gaining knowledge and new skills, you can see the world in a different light and gain a deeper understanding of how things work.">Knowledge</CheckBox>
+                    <CheckBox Foreground="white" x:Name="FamilyBox" FontSize="14" ToolTip="By better understanding how to budget and save money, individuals can create plans that set expectations, hold them accountable to their finances,&#x0d;and set a course for achieving seemingly unachievable goals.">Financial</CheckBox>
+
 
                 </StackPanel>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Column="1">
+                    <Grid>
+                        <TextBox Text="Stats" FontFamily="Old English Text MT" FontSize="50" TextAlignment="Center"/>
+                        <StackPanel Margin="0,58,0,0">
+                            <TextBlock TextWrapping="Wrap" Text="Stats are a way to break down the different parts of your life that you want to work on or improve. By setting specific goals for each area and breaking them down into manageable steps, you can make even monumental tasks feel achievable. Celebrating each step along the way provides motivation to keep going and helps you track your progress towards better wellness. With a focus on taking things one step at a time, the journey towards self-improvement becomes more attainable and rewarding" FontSize="17" TextAlignment="Center"/>
+                        </StackPanel>
+                    </Grid>
+                </Border>
             </Grid>
 
         </Grid>
