@@ -23,7 +23,7 @@
                 
                 <StackPanel Grid.Column="0">
 
-                    <TextBlock Foreground="White" FontSize="16">Select the Stats that mean the most to you.</TextBlock>
+                    <TextBlock Foreground="White" FontSize="16"  Text="Select the Stats that mean the most to you.&#x0d;Hover over to learn more about benfits"/>
 
                     <CheckBox Foreground="white" x:Name="MoodBox" FontSize="14" ToolTip="your mood can influence perception, motivation, decision-making, social interactions, and even more basic cognitive processes like memory and attention.">Mood</CheckBox>
                     <CheckBox Foreground="white" x:Name="FitnessBox" FontSize="14" ToolTip="Being physically active can improve your brain health, help manage weight, reduce the risk of disease, strengthen bones &#x0d; and muscles, and improve your ability to do everyday activities.&#x0d;Adults who sit less and do any amount of moderate-to-vigorous physical activity gain some health benefits.">Fitness</CheckBox>
