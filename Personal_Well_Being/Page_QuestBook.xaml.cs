@@ -51,6 +51,7 @@ namespace Personal_Well_Being
                 milestoneDescription = window.mileStoneDescription;
 
                 this.SelectedStatSkill.AddMilestone(milestoneDescription, 50);
+                this.MilestoneList.ItemsSource = this.SelectedStatSkill.CurrentMilestones;
             }
         }
 
@@ -84,20 +85,13 @@ namespace Personal_Well_Being
             window.Show();
         }
 
-        private void CompletedButton_Click(object sender, System.Windows.RoutedEventArgs e)
-        {
-            Victory victory = new Victory();
-            TaskList.Items.Remove(TaskList.SelectedItem);
-            victory.Show();
-        }
-
         private void StatList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             this.SelectedStatSkill = (Attribute?)this.StatList.SelectedItem;
             if (this.SelectedStatSkill != null)
             {
                 this.AddMilestoneButton.IsEnabled = true;
-                this.MilestoneList.ItemsSource = this.SelectedStatSkill.Milestones;
+                this.MilestoneList.ItemsSource = this.SelectedStatSkill.CurrentMilestones;
             }
             else
             {
@@ -111,7 +105,9 @@ namespace Personal_Well_Being
             if (this.MilestoneList.SelectedItem != null)
             {
                 ((Milestone)this.MilestoneList.SelectedItem).Complete();
-                ((Milestone)this.MilestoneList.SelectedItem).Remove();
+                this.MilestoneList.ItemsSource = this.SelectedStatSkill.CurrentMilestones;
+                Victory victory = new Victory();
+                victory.Show();
             }
         }
 
