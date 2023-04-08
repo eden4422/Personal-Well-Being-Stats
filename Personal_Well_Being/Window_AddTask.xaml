@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Personal_Well_Being"
         mc:Ignorable="d"
-        Title="Window_AddTask" Height="300" Width="400">
+        Title="Window_AddTask" Height="300" Width="400" Background="Black">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
@@ -16,7 +16,7 @@
 
         <TextBlock HorizontalAlignment="Center" FontFamily="Old English Text MT" Foreground="Goldenrod" VerticalAlignment="Bottom" FontSize="30" Grid.Row="0">Add Task</TextBlock>
 
-        <TextBlock FontFamily="Old English Text MT" Grid.Row="1">Add any number of achievable tasks to help keep you on track toward achieving your goals.</TextBlock>
+        <TextBlock Foreground="White" TextWrapping="Wrap" FontFamily="Old English Text MT" Grid.Row="1">Add any number of achievable tasks to help keep you on track toward achieving your goals.</TextBlock>
 
         <StackPanel Grid.Row="2">
             <TextBox Width="300" x:Name="taskBox"></TextBox>
