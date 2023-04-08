@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 
@@ -21,8 +22,8 @@ namespace Personal_Well_Being
             this.InitialValue = currentValue;
             this.Priority = priority;
             this.totalXP = 0;
-            this.Milestones = new List<AttributeItem>();
-            this.Tasks = new List<AttributeItem>();
+            this.Milestones = new ObservableCollection<AttributeItem>();
+            this.Tasks = new ObservableCollection<AttributeItem>();
         }
 
         public int InitialValue { get; set; }
@@ -62,18 +63,19 @@ namespace Personal_Well_Being
 
         public string Name { get; set; }
 
-        internal List<AttributeItem> Milestones { get; }
+        internal ObservableCollection<AttributeItem> Milestones { get; }
 
-        internal List<AttributeItem> CompletedMilestones
+        internal ObservableCollection<AttributeItem> CompletedMilestones
         {
             get
             {
                 IEnumerable<AttributeItem> completedMilestones = from Milestone milestone in this.Milestones where milestone.IsCompleted == true select milestone;
-                return completedMilestones.ToList();
+                //return completedMilestones.ToList();
+                return new ObservableCollection<AttributeItem>(completedMilestones.ToList());
             }
         }
 
-        internal List<AttributeItem> Tasks { get; }
+        internal ObservableCollection<AttributeItem> Tasks { get; }
 
         public event PropertyChangedEventHandler? PropertyChanged;
 

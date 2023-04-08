@@ -2,6 +2,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace Personal_Well_Being
 {
@@ -17,7 +18,7 @@ namespace Personal_Well_Being
         /// <param name="xpValue">XP value to return on completion.</param>
         /// <param name="parent">Reference to owner list.</param>
         /// <param name="frequency">Frequency of task recurrance.</param>
-        public Task(string description, int xpValue, List<AttributeItem> parent, TimeSpan frequency)
+        public Task(string description, int xpValue, ObservableCollection<AttributeItem> parent, TimeSpan frequency)
             : base(description, xpValue, parent)
         {
             this.TimesCompleted = 0;
