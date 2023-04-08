@@ -12,8 +12,7 @@
         <Label Margin="197,10,197,135">
             <Label Content = "Victory!" Foreground="Goldenrod"  FontFamily="Parchment" Height="295" Width="411" FontSize="200"/>
         </Label>
-        <Label Content="Xp gained:"  FontFamily="Blackadder ITC" Height="200" FontSize="40" Margin="28,338,559,-88"/>
+        <Label Content="Xp gained:"  FontFamily="Blackadder ITC" Height="200" FontSize="40" Margin="244,250,343,0"/>
         <Button Content="OK" FontSize="60" Foreground="Goldenrod" Background='SaddleBrown' FontFamily="Blackadder ITC" Margin="343,338,343,10" Click="Button_Click"/>
-        <Label Content="Gold gained:" FontFamily="Blackadder ITC" Height="200" FontSize="40" Margin="482,338,107,-88"/>
     </Grid>
 </Window>
