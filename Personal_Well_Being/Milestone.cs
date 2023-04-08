@@ -10,6 +10,8 @@ namespace Personal_Well_Being
     /// </summary>
     internal class Milestone : AttributeItem
     {
+        private bool isCompleted = false;
+
         /// <summary>
         /// Initializes a new instance of Milestone.
         /// </summary>
@@ -25,7 +27,18 @@ namespace Personal_Well_Being
         /// <summary>
         /// Flag for Milestone completion.
         /// </summary>
-        public bool IsCompleted { get; private set; }
+        public bool IsCompleted
+        {
+            get { return this.isCompleted; }
+            set
+            {
+                if (this.IsCompleted != value)
+                {
+                    this.isCompleted = value;
+                    this.OnPropertyChanged(nameof(IsCompleted));
+                }
+            }
+        }
 
         /// <summary>
         /// Comlpetes milestone.
@@ -33,7 +46,6 @@ namespace Personal_Well_Being
         public override void Complete()
         {
             this.IsCompleted = true;
-            OnPropertyChanged(nameof(IsCompleted));
         }
     }
 }
