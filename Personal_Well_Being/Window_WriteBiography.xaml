@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Personal_Well_Being"
         mc:Ignorable="d"
-        Title="Window_WriteBiography" Height="450" Width="800">
+        Title="Window_WriteBiography" Height="450" Width="800" Background="Black">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
@@ -13,7 +13,7 @@
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock FontSize="18" Foreground="Goldenrod" FontFamily="Old English Text MT"  TextAlignment="Center" Grid.Row="0">Write Biography</TextBlock>
+        <TextBlock FontSize="18" Foreground="Goldenrod" FontFamily="Old English Text MT"  TextAlignment="Center" Grid.Row="0">Write a brief biography...</TextBlock>
 
         <Grid Margin="20, 0, 20, 0" Grid.Row="1">
             

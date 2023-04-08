@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Personal_Well_Being"
         mc:Ignorable="d"
-        Title="Window_ChooseStats" Height="450" Width="800">
+        Title="Window_ChooseStats" Height="450" Width="800" Background="Black">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
@@ -13,7 +13,7 @@
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock FontSize="18" Foreground="Goldenrod" FontFamily="Old English Text MT" TextAlignment="Center" Grid.Row="0">Choose Stats</TextBlock>
+        <TextBlock FontSize="18" Foreground="Goldenrod" FontFamily="Old English Text MT" TextAlignment="Center" Grid.Row="0">Choose Your Stats</TextBlock>
 
         <Grid Margin="20, 0, 20, 0" Grid.Row="1">
             <Grid>
@@ -23,16 +23,16 @@
                 </Grid.ColumnDefinitions>
                 
                 <StackPanel Grid.Column="0">
-                    <TextBlock FontSize="16">Select the Stats that mean the most to you.</TextBlock>
+                    <TextBlock Foreground="White" FontSize="16">Select the Stats that mean the most to you.</TextBlock>
                 
-                    <CheckBox x:Name="MoodBox" FontSize="14">Mood</CheckBox>
-                    <CheckBox x:Name="FitnessBox" FontSize="14">Fitness</CheckBox>
-                    <CheckBox x:Name="CareerBox" FontSize="14">Career</CheckBox>
-                    <CheckBox x:Name="FriendsBox" FontSize="14">Friends</CheckBox>
-                    <CheckBox x:Name="CompanionshipBox" FontSize="14">Companionship</CheckBox>
-                    <CheckBox x:Name="SpiritualityBox" FontSize="14">Spirituality</CheckBox>
-                    <CheckBox x:Name="SchoolBox" FontSize="14">School</CheckBox>
-                    <CheckBox x:Name="FamilyBox" FontSize="14">Family</CheckBox>
+                    <CheckBox Foreground="white" x:Name="MoodBox" FontSize="14">Mood</CheckBox>
+                    <CheckBox Foreground="white" x:Name="FitnessBox" FontSize="14">Fitness</CheckBox>
+                    <CheckBox Foreground="white" x:Name="CareerBox" FontSize="14">Career</CheckBox>
+                    <CheckBox Foreground="white" x:Name="FriendsBox" FontSize="14">Friends</CheckBox>
+                    <CheckBox Foreground="white" x:Name="CompanionshipBox" FontSize="14">Companionship</CheckBox>
+                    <CheckBox Foreground="white" x:Name="SpiritualityBox" FontSize="14">Spirituality</CheckBox>
+                    <CheckBox Foreground="white" x:Name="SchoolBox" FontSize="14">School</CheckBox>
+                    <CheckBox Foreground="white" x:Name="FamilyBox" FontSize="14">Family</CheckBox>
 
                 </StackPanel>
             </Grid>

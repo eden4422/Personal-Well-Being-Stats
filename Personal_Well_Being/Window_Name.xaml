@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Personal_Well_Being"
         mc:Ignorable="d"
         Title="Window_Name" Height="180" Width="450"
-        ResizeMode="NoResize">
+        ResizeMode="NoResize" Background="Black">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
@@ -20,7 +20,7 @@
         <Grid Margin="20, 0, 20, 0" Grid.Row="1">
 
             <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Enter your name:" Margin="0,0,10,0"/>
+                <TextBlock Foreground="White" Text="Enter your name:" Margin="0,0,10,0"/>
                 <TextBox x:Name="NameInput" Text="{Binding InputName}" KeyDown="NameInput_KeyDown" Width="200" Height="20" VerticalAlignment="Top"/>
             </StackPanel>
 
