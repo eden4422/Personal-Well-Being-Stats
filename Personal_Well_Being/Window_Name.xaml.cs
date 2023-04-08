@@ -10,7 +10,10 @@ namespace Personal_Well_Being
         public Window_Name()
         {
             InitializeComponent();
+            this.DataContext = this;
         }
+
+        public string InputName { get; set; } = string.Empty;
 
         private void AcceptButton_Click(object sender, RoutedEventArgs e)
         {
