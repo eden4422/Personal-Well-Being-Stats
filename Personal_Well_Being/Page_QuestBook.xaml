@@ -15,10 +15,10 @@
             <ColumnDefinition Width ="*"/>
         </Grid.ColumnDefinitions>
         <DockPanel>
-            <Label x:Name="UserName" DockPanel.Dock="Top" Height="50" FontSize="28"/>
+            <Label x:Name="UserName" Foreground="Goldenrod" FontFamily="Old English Text MT" DockPanel.Dock="Top" Height="50" FontSize="28" Width="198"/>
 
             <TabControl DockPanel.Dock="Top">
-                <TabItem Header="Stats" Grid.Column="0" Width="90">
+                <TabItem Header="Stats" Background="Goldenrod" FontFamily="Old English Text MT" Grid.Column="0" Width="90">
                     <ItemsControl x:Name="StatList">
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
@@ -34,7 +34,7 @@
                         </ItemsControl.ItemTemplate>
                     </ItemsControl>
                 </TabItem>
-                <TabItem Header="Skills" Width="90">
+                <TabItem Header="Skills" Background="Goldenrod" FontFamily="Old English Text MT"  Width="90">
                     <ItemsControl x:Name="SkilList">
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
@@ -53,7 +53,7 @@
             </TabControl>
         </DockPanel>
         <DockPanel Grid.Column="1">
-            
+
         </DockPanel>
     </Grid>
 </Page>
