@@ -23,7 +23,7 @@
 
         <Grid Grid.Row="1" Grid.Column="1">
 
-            <Border Background="GhostWhite" BorderBrush="Black" BorderThickness="1">
+            <Border Background="Black" BorderBrush="Black" BorderThickness="1">
                 <Grid>
 
                     <Grid.RowDefinitions>
@@ -33,7 +33,7 @@
 
 
 
-                    <TextBlock FontSize="50" TextAlignment="Center" Grid.Row="0">Real Stats</TextBlock>
+                    <TextBlock FontSize="50" FontFamily ="Old English Text MT" Foreground="Goldenrod" TextAlignment="Center" Grid.Row="0">Real Stats</TextBlock>
 
                     <StackPanel Grid.Row="1">
                         <Button x:Name="NewGameButton" Margin="10" Click="NewGameButton_Click">New Game</Button>
