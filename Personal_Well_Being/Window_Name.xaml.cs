@@ -11,14 +11,19 @@ namespace Personal_Well_Being
         {
             InitializeComponent();
             this.DataContext = this;
+
+            NameInput.Focus();
         }
 
         public string InputName { get; set; } = string.Empty;
 
         private void AcceptButton_Click(object sender, RoutedEventArgs e)
         {
-            DialogResult = true;
-            this.Close();
+            if (InputName != string.Empty)
+            {
+                DialogResult = true;
+                this.Close();
+            }
         }
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
