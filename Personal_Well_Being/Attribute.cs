@@ -16,6 +16,12 @@ namespace Personal_Well_Being
         private List<AttributeItem> milestones;
         private List<AttributeItem> tasks;
 
+        /// <summary>
+        /// Creates a new instance of the Attribute class.
+        /// </summary>
+        /// <param name="name">Name of the attribute</param>
+        /// <param name="currentValue">The starting/current value of the attribute.</param>
+        /// <param name="priority">The priority of the attribute.</param>
         internal Attribute(string name, int currentValue, int priority)
         {
             this.name = name;
@@ -60,6 +66,12 @@ namespace Personal_Well_Being
             get { return this.tasks;}
         }
 
+        /// <summary>
+        /// Instantiates a new milestone object, adds it to this attribute's list of milestones. 
+        /// Also, subscribes this OwnedItemPropertyChanged to the OnPropertyChange event of the new milestone.
+        /// </summary>
+        /// <param name="description"></param>
+        /// <param name="xpValue"></param>
         internal void AddMilestone(string description, int xpValue)
         {
             Milestone newMilestone = new Milestone(description, xpValue, ref this.milestones);
@@ -67,9 +79,16 @@ namespace Personal_Well_Being
             this.milestones.Add(newMilestone);
         }
 
-        internal void AddTask(string description, int xpValue)
+        /// <summary>
+        /// Instantiates a new task and adds it to this attribute's list of tasks. Additionally, subscribes this OwnedItemPropertyChanged method
+        /// to the OnPropertyChange event of the task created.
+        /// </summary>
+        /// <param name="description">The description of the task to be created.</param>
+        /// <param name="xpValue">The xp value of the task.</param>
+        /// <param name="frequency">The frequency of the task.</param>
+        internal void AddTask(string description, int xpValue, TimeSpan frequency)
         {
-            Task newTask = new Task(description, xpValue, ref this.tasks);
+            Task newTask = new Task(description, xpValue, frequency, ref this.tasks);
             newTask.OnPropertyChange += this.OwnedItemPropertyChanged;
             this.tasks.Add(newTask);
         }
