@@ -54,7 +54,10 @@ namespace Personal_Well_Being
         {
             ListViewItem listViewItem = new ListViewItem();
             listViewItem.Content = SkillInput.Text;
-            listView.Items.Add(listViewItem);
+            if ((string)listViewItem.Content != string.Empty)
+            {
+                listView.Items.Add(listViewItem);
+            }
             SkillInput.Text = "";
         }
     }
