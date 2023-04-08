@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿// Author: Rick Roslof
+
+using System.Collections.Generic;
 using System.ComponentModel;
 
 namespace Personal_Well_Being
@@ -23,9 +25,7 @@ namespace Personal_Well_Being
         /// <summary>
         /// Updates stat and skill progress properties.
         /// </summary>
-        /// <param name="initial">Initial skill sheet.</param>
-        /// <param name="current">Current skill sheet.</param>
-        /// <param name="goal">Goal skill sheet.</param>
+        /// <param name="sheet">Current skill sheet.</param>
         public void Update(Sheet sheet)
         {
             // Update stats
