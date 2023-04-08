@@ -15,7 +15,7 @@
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock FontSize="20" Foreground="Goldenrod" FontFamily="Old English Text MT" TextAlignment="Center" Grid.Row="0">Character Creation</TextBlock>
+        <TextBlock FontSize="30" Foreground="Goldenrod" FontFamily="Old English Text MT" TextAlignment="Center" Grid.Row="0">Character Creation</TextBlock>
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="3*"/>
