@@ -48,9 +48,8 @@
                     <TextBlock>Create Skills by entering them below:</TextBlock>
                     <TextBox x:Name="SkillInput"></TextBox>
                     <Button x:Name="AddSkill" Width="100" Click="AddSkill_Button">Add Skill</Button>
-                    
+
                     <ListView x:Name="listView" Margin="15">
-                        <ListViewItem>Carpentry</ListViewItem>
                     </ListView>
                 </StackPanel>
             </Grid>
