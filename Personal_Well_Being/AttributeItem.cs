@@ -46,6 +46,12 @@ namespace Personal_Well_Being
             }
         }
 
+        public int Priority
+        {
+            get;
+            set;
+        }
+
         /// <summary>
         /// Reference to parent list.
         /// </summary>

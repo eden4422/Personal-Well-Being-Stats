@@ -16,11 +16,10 @@ namespace Personal_Well_Being
         /// <param name="name">Name of the attribute</param>
         /// <param name="currentValue">The starting/current value of the attribute.</param>
         /// <param name="priority">The priority of the attribute.</param>
-        internal Attribute(string name, int currentValue, int priority)
+        internal Attribute(string name, int currentValue)
         {
             this.Name = name;
             this.InitialValue = currentValue;
-            this.Priority = priority;
             this.totalXP = 0;
             this.Milestones = new ObservableCollection<AttributeItem>();
             this.Tasks = new ObservableCollection<AttributeItem>();
@@ -44,7 +43,6 @@ namespace Personal_Well_Being
             }
         }
 
-        internal int Priority { get; set; }
 
         internal int TotalXP
         {
@@ -62,6 +60,14 @@ namespace Personal_Well_Being
         }
 
         public string Name { get; set; }
+
+        public ObservableCollection<AttributeItem> UncompletedAttributeItems
+        {
+            get
+            {
+                return new ObservableCollection<AttributeItem>(this.CompletedMilestones.Union(Tasks).ToList());
+            }
+        }
 
         internal ObservableCollection<AttributeItem> Milestones { get; }
 

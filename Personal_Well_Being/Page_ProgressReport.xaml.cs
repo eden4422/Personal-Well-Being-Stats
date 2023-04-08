@@ -10,23 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Personal_Well_Being
 {
     /// <summary>
-    /// Interaction logic for Window_ProgressReport.xaml
+    /// Interaction logic for Page_ProgressReport.xaml
     /// </summary>
-    public partial class Window_ProgressReport : Window
+    public partial class Page_ProgressReport : Page
     {
-  
-        private UserController UC;
-
-        public Window_ProgressReport( UserController UC)
+        public Page_ProgressReport()
         {
             InitializeComponent();
-            this.UC = UC;
-            this.ObjectiveList.ItemsSource = UC.CurrentUser.CurrentSheet.TodoItems;
         }
     }
 }

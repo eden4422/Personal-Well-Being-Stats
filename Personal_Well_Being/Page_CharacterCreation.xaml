@@ -38,7 +38,7 @@
                 <Grid Margin="15">
                     <Border  BorderThickness="1" BorderBrush="Black">
                         <Viewbox HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <Image x:Name="ImageDisplay" Source="image1.jpg"/>
+                            <Image x:Name="ImageDisplay" Source="/image1.jpg"/>
                         </Viewbox>
                     </Border>
                 </Grid>

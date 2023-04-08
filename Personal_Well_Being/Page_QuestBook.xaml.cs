@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Windows.Controls;
 
 namespace Personal_Well_Being
@@ -79,13 +80,14 @@ namespace Personal_Well_Being
 
         private void ProgressReport_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            Window_ProgressReport window = new Window_ProgressReport();
+            Window_ProgressReport window = new Window_ProgressReport(this.UC);
             window.Show();
         }
 
         private void CompletedButton_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             Victory victory = new Victory();
+            taskListView.Items.Remove(taskListView.SelectedItem);
             victory.Show();
         }
 

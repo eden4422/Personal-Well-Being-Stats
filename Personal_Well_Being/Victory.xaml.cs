@@ -12,7 +12,7 @@ namespace Personal_Well_Being
         {
             InitializeComponent();
             System.Media.SoundPlayer player = new System.Media.SoundPlayer();
-            player.SoundLocation = "C:\\RealStats\\Personal-Well-Being-Stats\\Personal_Well_Being\\victory.wav";
+            player.SoundLocation = "D:\\Git\\Personal-Well-Being-Stats\\Personal_Well_Being\\victory.wav";
             player.Load();
             player.Play();
         }
