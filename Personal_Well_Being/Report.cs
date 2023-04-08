@@ -26,17 +26,15 @@ namespace Personal_Well_Being
         /// <param name="initial">Initial skill sheet.</param>
         /// <param name="current">Current skill sheet.</param>
         /// <param name="goal">Goal skill sheet.</param>
-        public void Update(Sheet initial, Sheet current, Sheet goal)
+        public void Update(Sheet sheet)
         {
             // Update stats
             this.StatProgress = new();
-            List<Attribute> initialStats = initial.Stats;
-            List<Attribute> currentStats = current.Stats;
-            List<Attribute> goalStats = goal.Stats;
+            List<Attribute> stats = sheet.Stats;
 
-            for (int i = 0; i < initialStats.Count; i++)
+            foreach (Attribute attribute in stats)
             {
-                this.StatProgress.Add((initialStats[i].Name, initialStats[i].InitialValue, currentStats[i].InitialValue, goalStats[i].InitialValue));
+                this.StatProgress.Add((attribute.Name, attribute.InitialValue, attribute.InitialValue + attribute.CompletedMilestones.Count, attribute.InitialValue + attribute.Milestones.Count));
             }
 
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(StatProgress)));
@@ -44,13 +42,11 @@ namespace Personal_Well_Being
 
             // Update skills
             this.SkillProgress = new();
-            List<Attribute> initialSkills = initial.Skills;
-            List<Attribute> currentSkills = current.Skills;
-            List<Attribute> goalSkills = goal.Skills;
+            List<Attribute> skills = sheet.Skills;
 
-            for (int i = 0; i < initialStats.Count; i++)
+            foreach (Attribute attribute in skills)
             {
-                this.StatProgress.Add((initialSkills[i].Name, initialSkills[i].InitialValue, currentSkills[i].InitialValue, goalSkills[i].InitialValue));
+                this.StatProgress.Add((attribute.Name, attribute.InitialValue, attribute.InitialValue + attribute.CompletedMilestones.Count, attribute.InitialValue + attribute.Milestones.Count));
             }
 
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SkillProgress)));
