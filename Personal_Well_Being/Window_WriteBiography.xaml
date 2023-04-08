@@ -20,13 +20,12 @@
             <StackPanel Orientation="Vertical">
                 <TextBlock Text="Describe yourself: "/>
                 <TextBox x:Name="BiographyTextBox"
-                         Height="250"
+                         Height="117"
                          AcceptsReturn="True"
                          AcceptsTab="True"
                          AutoWordSelection="True"
                          TextWrapping="WrapWithOverflow"/>
             </StackPanel>
-
         </Grid>
 
         <Grid Grid.Row="2">
