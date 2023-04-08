@@ -32,7 +32,7 @@
                     <CheckBox FontSize="14">Companionship</CheckBox>
                     <CheckBox FontSize="14">Spirituality</CheckBox>
                     <CheckBox FontSize="14">School</CheckBox>
-                    <CheckBox FontSize="14">Family</CheckBox
+                    <CheckBox FontSize="14">Family</CheckBox>
                 </StackPanel>
             </Grid>
 

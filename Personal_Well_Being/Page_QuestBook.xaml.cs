@@ -1,28 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Collections.Generic;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Personal_Well_Being
 {
     /// <summary>
-    /// Interaction logic for Page1.xaml
+    /// Interaction logic for Page_QuestBook.xaml
     /// </summary>
-    public partial class Page1 : Page
+    public partial class Page_QuestBook : Page
     {
-        public Page1()
+        private MainWindow mainWindow;
+
+        private UserController UC;
+
+        private List<Attribute> Stats { get; set; }
+
+        public Page_QuestBook(MainWindow mainWindow, UserController UC)
         {
             InitializeComponent();
+            this.UC = UC;
+            this.mainWindow = mainWindow;
+            this.UserName.Content = UC.CurrentUser.Name;
+            this.Stats = UC.CurrentUser.CurrentSheet.Stats;
+            this.StatList.ItemsSource = this.Stats;
         }
     }
 }
