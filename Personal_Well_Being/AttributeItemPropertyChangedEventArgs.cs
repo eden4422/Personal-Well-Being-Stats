@@ -17,6 +17,6 @@ namespace Personal_Well_Being
         /// <summary>
         /// XP value parameter.
         /// </summary>
-        int XpValue { get; }
+        internal int XpValue { get; }
     }
 }

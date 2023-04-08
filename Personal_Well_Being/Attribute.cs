@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,7 +9,7 @@ using System.Windows.Markup;
 
 namespace Personal_Well_Being
 {
-    internal class Attribute
+    internal class Attribute : INotifyPropertyChanged
     {
         private int currentValue;
         private int priority;
@@ -47,7 +49,16 @@ namespace Personal_Well_Being
         internal int TotalXP
         {
             get { return this.totalXP; }
-            set { this.totalXP = value; }
+            set 
+            { 
+                if (this.totalXP != value)
+                {
+                    this.totalXP = value;
+                    this.XPChanged?.Invoke(this, new PropertyChangedEventArgs("XP")); 
+                }
+                
+                    
+            }
         }
 
         internal string Name
@@ -66,6 +77,8 @@ namespace Personal_Well_Being
             get { return this.tasks;}
         }
 
+        public event PropertyChangedEventHandler? XPChanged = (sender, e) => { };
+
         /// <summary>
         /// Instantiates a new milestone object, adds it to this attribute's list of milestones. 
         /// Also, subscribes this OwnedItemPropertyChanged to the OnPropertyChange event of the new milestone.
@@ -74,8 +87,8 @@ namespace Personal_Well_Being
         /// <param name="xpValue"></param>
         internal void AddMilestone(string description, int xpValue)
         {
-            Milestone newMilestone = new Milestone(description, xpValue, ref this.milestones);
-            newMilestone.OnPropertyChange += this.OwnedItemPropertyChanged;
+            Milestone newMilestone = new Milestone(description, xpValue, this.milestones);
+            newMilestone.AttributeItemPropertyChanged += this.OwnedItemPropertyChanged;
             this.milestones.Add(newMilestone);
         }
 
@@ -88,14 +101,17 @@ namespace Personal_Well_Being
         /// <param name="frequency">The frequency of the task.</param>
         internal void AddTask(string description, int xpValue, TimeSpan frequency)
         {
-            Task newTask = new Task(description, xpValue, frequency, ref this.tasks);
-            newTask.OnPropertyChange += this.OwnedItemPropertyChanged;
+            Task newTask = new Task(description, xpValue, this.tasks, frequency);
+            newTask.AttributeItemPropertyChanged += this.OwnedItemPropertyChanged;
             this.tasks.Add(newTask);
         }
 
-        internal void OwnedItemPropertyChanged(Object sender, )
+        internal void OwnedItemPropertyChanged(Object sender, AttributeItemPropertyChangedEventArgs e)
         {
-
+            if (e.PropertyName == "IsCompleted")
+            {
+                this.TotalXP += e.XpValue;
+            }
         }
     }
 }

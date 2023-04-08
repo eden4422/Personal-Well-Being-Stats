@@ -6,7 +6,7 @@ using System.Collections.Generic;
 namespace Personal_Well_Being
 {
     /// <summary>
-    /// Clas for task items.
+    /// Class for task items.
     /// </summary>
     internal class Task : AttributeItem
     {
