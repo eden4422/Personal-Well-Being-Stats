@@ -7,6 +7,40 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
 
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="1" Grid.Column="1">
+
+            <Border Background="GhostWhite" BorderBrush="Black" BorderThickness="1">
+                <Grid>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="5*"/>
+                    </Grid.RowDefinitions>
+
+
+
+                    <TextBlock FontSize="50" TextAlignment="Center" Grid.Row="0">Real Stats</TextBlock>
+
+                    <StackPanel Grid.Row="1">
+                        <Button Margin="10">New Game</Button>
+                        <Button Margin="10">Load Game</Button>
+                        <Button Margin="10">Quit</Button>
+                    </StackPanel>
+                </Grid>
+            </Border>
+            
+        </Grid>
     </Grid>
 </Window>
