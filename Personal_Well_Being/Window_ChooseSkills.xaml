@@ -43,14 +43,18 @@
                     <CheckBox Foreground="white" x:Name="Origami" FontSize="14" Content="Origami"></CheckBox>
                     <CheckBox Foreground="white" x:Name="Calligraphy" FontSize="14" Content="Calligraphy"></CheckBox>
                 </StackPanel>
-
+                
                 <StackPanel Grid.Column="1">
-                    <TextBlock Foreground="White">Create Skills by entering them below:</TextBlock>
+                    <TextBlock Text="Welcome to the Skill Creator!" 
+                                FontSize="20"
+                                HorizontalAlignment="Center"
+                                Margin="0 0 0 20"
+                                Foreground ="White"/>
                     <TextBox x:Name="SkillInput"></TextBox>
                     <Button x:Name="AddSkill" Width="100" Click="AddSkill_Button">Add Skill</Button>
 
-                    <ListView x:Name="listView" Margin="15">
-                    </ListView>
+                    <ListView x:Name="listView" Margin="15"/>
+
                 </StackPanel>
             </Grid>
 

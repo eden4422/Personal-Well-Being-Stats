@@ -28,7 +28,6 @@
   <ItemGroup>
     <Resource Include="Default Images\Cap Levi.jpg" />
     <Resource Include="Default Images\Gandalf.png" />
-    <Resource Include="image1.jpg" />
     <Content Include="victory.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
