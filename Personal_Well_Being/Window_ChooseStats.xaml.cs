@@ -40,5 +40,10 @@ namespace Personal_Well_Being
         {
             this.Close();
         }
+
+        private void TextBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+
+        }
     }
 }
