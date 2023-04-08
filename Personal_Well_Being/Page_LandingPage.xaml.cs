@@ -28,7 +28,8 @@ namespace Personal_Well_Being
         }
         private void QuitButton_Click(object sender, RoutedEventArgs e)
         {
-            this.mainWindow.Close();
+            Window_AreYouSure window = new Window_AreYouSure(mainWindow);
+            window.ShowDialog();
         }
     }
 }

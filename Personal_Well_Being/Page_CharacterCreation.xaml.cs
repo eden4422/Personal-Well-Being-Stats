@@ -20,7 +20,29 @@ namespace Personal_Well_Being
         {
             InitializeComponent();
             this.mainWindow = mainWindow;
+
+            UploadPictureButton.IsEnabled = false;
+            WriteBiographyButton.IsEnabled = false;
+            ChooseStatsButton.IsEnabled = false;
+            ChooseSkillsButton.IsEnabled = false;
+
+            DoneButton.IsEnabled = false;
+
             this.UC = new UserController();
+        }
+
+        private void NameButton_Click(object sender, RoutedEventArgs e)
+        {
+            Window_Name window = new Window_Name();
+            if (window.ShowDialog() == true)
+            {
+                this.UC.CreateUser(window.InputName);
+
+                NameButton.IsEnabled = false;
+                UploadPictureButton.IsEnabled = true;
+
+                this.listView.Items.Add("Name: " + window.InputName);
+            }
         }
 
         private void UploadPictureButton_Click(object sender, RoutedEventArgs e)
@@ -34,6 +56,9 @@ namespace Personal_Well_Being
             {
                 string fileName = openFileDialog.FileName;
                 this.ImageDisplay.Source = new BitmapImage(new Uri(fileName));
+
+                UploadPictureButton.IsEnabled = false;
+                WriteBiographyButton.IsEnabled= true;
             }
         }
 
@@ -43,6 +68,10 @@ namespace Personal_Well_Being
             if(window.ShowDialog() == true )
             {
 
+                WriteBiographyButton.IsEnabled = false;
+                ChooseStatsButton.IsEnabled = true;
+
+                listView.Items.Add("Biography: " + window.bio);
             }
         }
 
@@ -155,15 +184,14 @@ namespace Personal_Well_Being
 
                 }
 
-            }
-        }
+                ChooseStatsButton.IsEnabled = false;
+                ChooseSkillsButton.IsEnabled = true;
 
-        private void DefineStatsButton_Click(object sender, RoutedEventArgs e)
-        {
-            Window_DefineStats window = new Window_DefineStats();
-            if (window.ShowDialog() == true )
-            {
-
+                listView.Items.Add("Stats:");
+                foreach (Attribute attribute in UC.CurrentUser.CurrentSheet.Stats)
+                {
+                    listView.Items.Add("--->" + attribute.Name);
+                }
             }
         }
 
@@ -182,26 +210,15 @@ namespace Personal_Well_Being
                         UC.CurrentUser.CurrentSheet.AddSkill(skill, 0, 0);
                     }
                 }
-               
-                // LINK TO BACKEND HERE
-            }
-        }
 
-        private void DefineSkillsButton_Click(object sender, RoutedEventArgs e)
-        {
-            Window_DefineSkills window = new Window_DefineSkills();
-            if (window.ShowDialog() == true )
-            {
+                ChooseSkillsButton.IsEnabled = false;
+                DoneButton.IsEnabled = true;
 
-            }
-        }
-
-        private void NameButton_Click(object sender, RoutedEventArgs e)
-        {
-            Window_Name window = new Window_Name();
-            if (window.ShowDialog() == true )
-            {
-                this.UC.CreateUser(window.InputName);
+                listView.Items.Add("Skills:");
+                foreach(string skill in window.skills)
+                {
+                    listView.Items.Add("--->" + skill);
+                }
             }
         }
 

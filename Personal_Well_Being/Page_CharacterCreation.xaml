@@ -23,18 +23,15 @@
                 <ColumnDefinition Width="3*"/>
             </Grid.ColumnDefinitions>
 
-            <StackPanel Grid.Column="0">
+            <StackPanel Margin="15" Grid.Column="0">
+                <Button x:Name="NameButton" Padding="3" Background="Goldenrod" FontFamily="Old English Text MT"  Margin="10" Click="NameButton_Click">Name</Button>
                 <Button x:Name="UploadPictureButton" Background="Goldenrod" FontFamily="Old English Text MT" Padding="3" Margin="10" Click="UploadPictureButton_Click">Upload Picture</Button>
                 <Button x:Name="WriteBiographyButton" Background="Goldenrod" FontFamily="Old English Text MT" Padding="3" Margin="10" Click="WriteBiographyButton_Click">Write Biography</Button>
                 <Button x:Name="ChooseStatsButton" Background="Goldenrod" FontFamily="Old English Text MT" Padding="3" Margin="10" Click="ChooseStatsButton_Click">Choose Stats</Button>
-                <Button x:Name="DefineStatsButton" Background="Goldenrod" FontFamily="Old English Text MT" Padding="3" Margin="10" Click="DefineStatsButton_Click">Define Stats</Button>
                 <Button x:Name="ChooseSkillsButton" Padding="3" Background="Goldenrod" FontFamily="Old English Text MT" Margin="10" Click="ChooseSkillsButton_Click">Choose Skills</Button>
-                <Button x:Name="DefineSkillsButton" Padding="3" Background="Goldenrod" FontFamily="Old English Text MT" Margin="10" Click="DefineSkillsButton_Click">Define Skills</Button>
-                <Button x:Name="NameButton" Padding="3" Background="Goldenrod" FontFamily="Old English Text MT"  Margin="10" Click="NameButton_Click">Name</Button>
             </StackPanel>
 
-            <ListView Margin="15" Grid.Column="1" FontFamily="Old English Text MT">
-                <ListViewItem>asdf</ListViewItem>
+            <ListView x:Name="listView" Margin="15" Grid.Column="1" FontFamily="Old English Text MT">
             </ListView>
 
             <Grid Grid.Column="2">
