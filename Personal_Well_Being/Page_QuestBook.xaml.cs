@@ -37,10 +37,17 @@ namespace Personal_Well_Being
 
         private void AddTaskButton_Click(object sender, System.Windows.RoutedEventArgs e)
         {
+            List<string> tasks = new List<string>();
+
             Window_AddTask window = new Window_AddTask();
             if (window.ShowDialog() == true)
             {
+                tasks = window.tasks;
 
+                foreach (string task in tasks)
+                {
+                    taskListView.Items.Add(task);
+                }
             }
         }
 

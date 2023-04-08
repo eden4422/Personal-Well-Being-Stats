@@ -19,9 +19,35 @@ namespace Personal_Well_Being
     /// </summary>
     public partial class Window_AddTask : Window
     {
+        public List<string> tasks;
+
         public Window_AddTask()
         {
             InitializeComponent();
+
+            tasks = new List<string>();
+        }
+
+        private void AddTasksButton_Click(object sender, RoutedEventArgs e)
+        {
+            foreach (string item in listView.Items)
+            {
+                tasks.Add(item);
+            }
+
+            DialogResult = true;
+
+            this.Close();
+        }
+
+        private void CancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+            listView.Items.Add(this.taskBox.Text);
         }
     }
 }

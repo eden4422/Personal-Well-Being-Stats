@@ -5,8 +5,33 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Personal_Well_Being"
         mc:Ignorable="d"
-        Title="Window_AddTask" Height="450" Width="800">
+        Title="Window_AddTask" Height="300" Width="400">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="30" Grid.Row="0">Add Task</TextBlock>
+
+        <TextBlock Grid.Row="1">Add any number of achievable tasks to help keep you on track toward achieving your goals.</TextBlock>
+
+        <StackPanel Grid.Row="2">
+            <TextBox Width="300" x:Name="taskBox"></TextBox>
+            <Button Width="100" x:Name="AddButton" Click="AddButton_Click">Add</Button>
+            <ListView Width="300" x:Name="listView"/>
+        </StackPanel>
+
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="5*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="AddTasksButton" Margin="10" Grid.Column="0" Click="AddTasksButton_Click">Add Tasks</Button>
+            <Button x:Name="CancelButton" Margin="10" Grid.Column="1" Click="CancelButton_Click">Cancel</Button>
+        </Grid>
     </Grid>
 </Window>
