@@ -10,29 +10,27 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Personal_Well_Being
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Victory.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Victory : Window
     {
-        public MainWindow()
+        public Victory()
         {
             InitializeComponent();
+            System.Media.SoundPlayer player = new System.Media.SoundPlayer();
+            player.SoundLocation = "D:\\Git\\Personal-Well-Being-Stats\\Personal_Well_Being\\victory.wav";
+            player.Load();
+            player.Play();
         }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            QuestBook window1 = new QuestBook();
-            window1.Show();
+            this.Close();
         }
     }
 }

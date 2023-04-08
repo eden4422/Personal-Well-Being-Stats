@@ -1,0 +1,30 @@
+﻿<Window x:Class="Personal_Well_Being.QuestBook"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Personal_Well_Being"
+        mc:Ignorable="d"
+        Title="Window1" Height="500" Width="815">
+    <Grid Margin="0,0,0,21">
+        <TabControl TabStripPlacement="Right" Width="780" Margin="10,0,10,0">
+            <TabItem Header="Tab 1">
+                <!-- Content for Tab 1 goes here -->
+                <Grid>
+                    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Width="446" Margin="339,0,0,96">
+                        <DataGrid Width="306" Height="260">
+                            <!-- DataGrid columns and other properties -->
+                        </DataGrid>
+                    </ScrollViewer>
+                    <Label Content="XP:" Margin="301,372,300,0" FontFamily="Blackadder ITC" FontSize="35"></Label>
+                    <ProgressBar Minimum="0" Maximum="100" Margin="391,372,38,29"/>
+                    <Label Content="Stat:" Margin="87,79,514,293" FontFamily="Blackadder ITC" FontSize="35"></Label>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Tab 2">
+                <!-- Content for Tab 2 goes here -->
+                <Label Content="Content for Tab 2"/>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

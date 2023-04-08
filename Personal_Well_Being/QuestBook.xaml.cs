@@ -10,29 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Personal_Well_Being
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for QuestBook.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class QuestBook : Window
     {
-        public MainWindow()
+        public QuestBook()
         {
             InitializeComponent();
-        }
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            QuestBook window1 = new QuestBook();
-            window1.Show();
         }
     }
 }
