@@ -31,6 +31,7 @@
                                     <GridViewColumn Header="Stat" Width="Auto" DisplayMemberBinding="{Binding Description}" />
                                     <GridViewColumn Header="Tasks done" Width="Auto" DisplayMemberBinding="{Binding XPValue}"/>
                                     <GridViewColumn Header="Levels gained" Width="Auto" DisplayMemberBinding="{Binding XPValue}"/>
+                                    <GridViewColumn Header="Remaining milestones" Width="Auto" DisplayMemberBinding="{Binding XPValue}"/>
                                     <GridViewColumn Header="XP gained" Width="Auto" DisplayMemberBinding="{Binding XPValue}"/>
                                 </GridView>
                             </ListView.View>
