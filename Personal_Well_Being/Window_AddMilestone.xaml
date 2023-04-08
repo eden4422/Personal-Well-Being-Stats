@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Personal_Well_Being"
         mc:Ignorable="d"
-        Title="Window_AddMilestone" Height="300" Width="500">
+        Title="Window_AddMilestone" Height="300" Width="500" Background="Black">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
@@ -14,8 +14,8 @@
             <RowDefinition Height="40"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="18">Add Milestone</TextBlock>
-        <TextBlock Grid.Row="1" FontSize="14" TextWrapping="Wrap">Write a short description of a goal within reach. This goal may require a few steps to achieve.</TextBlock>
+        <TextBlock FontFamily="Old English Text MT" Foreground="Goldenrod" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="18">Add Milestone</TextBlock>
+        <TextBlock Foreground="white" Grid.Row="1" FontSize="14" TextWrapping="Wrap">Write a short description of a goal within reach. This goal may require a few steps to achieve.</TextBlock>
         <TextBox x:Name="milestoneDescription" Grid.Row="2" Margin="15"></TextBox>
         <Grid Grid.Row="3">
             <Grid.ColumnDefinitions>
