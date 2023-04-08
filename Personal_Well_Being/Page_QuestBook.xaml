@@ -33,7 +33,7 @@
 
             <TabControl Grid.Row="1">
                 <TabItem Header="Stats" Grid.Column="0" Width="90">
-                    <ListView x:Name="StatList">
+                    <ListView x:Name="StatList" SelectionChanged="StatList_SelectionChanged">
                         <ListView.View>
                             <GridView AllowsColumnReorder="false">
                                 <GridViewColumn Header="Stat" Width="Auto" DisplayMemberBinding="{Binding Name}" />
@@ -73,6 +73,14 @@
                     <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" Grid.Row="0">QUEST</TextBlock>
 
                     <ListView x:Name="milestoneListView" Margin="10,0,10,10" Grid.Row="1" >
+                        <ListView x:Name="MilestoneList">
+                            <ListView.View>
+                                <GridView AllowsColumnReorder="false">
+                                    <GridViewColumn Header="Name" Width="250" DisplayMemberBinding="{Binding Description, UpdateSourceTrigger=PropertyChanged}"/>
+                                    <GridViewColumn Header="Value" Width="Auto" DisplayMemberBinding="{Binding XpValue, UpdateSourceTrigger=PropertyChanged}"/>
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
                     </ListView>
 
                     <Button Margin="20,0, 20, 0" x:Name="AddMilestoneButton" Grid.Row="2" Click="AddMilestoneButton_Click">Add Milestone</Button>
