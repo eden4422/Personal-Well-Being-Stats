@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 
 namespace Personal_Well_Being
 {
@@ -51,7 +52,8 @@ namespace Personal_Well_Being
         {
             get
             {
-                return this.Milestones;
+                IEnumerable<AttributeItem> completedMilestones = from Milestone milestone in this.Milestones where milestone.IsCompleted == true select milestone;
+                return completedMilestones.ToList();
             }
         }
 
