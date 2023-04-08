@@ -19,9 +19,25 @@ namespace Personal_Well_Being
     /// </summary>
     public partial class Window_AddMilestone : Window
     {
+        public string mileStoneDescription;
+
         public Window_AddMilestone()
         {
             InitializeComponent();
+        }
+
+        private void SubmitButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.DialogResult = true;
+
+            mileStoneDescription = milestoneDescription.Text;
+
+            this.Close();
+        }
+
+        private void CancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

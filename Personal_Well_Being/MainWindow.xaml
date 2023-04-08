@@ -7,7 +7,11 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+<<<<<<< HEAD
         <Image Source="D:\Git\Personal-Well-Being-Stats\Personal_Well_Being\parchment.jpg" Stretch="Fill"></Image>
+=======
+        <Image Source="/parchment.jpg" Stretch="Fill"/>
+>>>>>>> d099004632f31796a8e94ff2524e7b4c1a76c395
         <Frame x:Name="Main" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>

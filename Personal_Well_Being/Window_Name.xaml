@@ -21,7 +21,7 @@
 
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Enter your name:" Margin="0,0,10,0"/>
-                <TextBox x:Name="NameInput" Text="{Binding InputName}" Width="200" Height="20" VerticalAlignment="Top"/>
+                <TextBox x:Name="NameInput" Text="{Binding InputName}" KeyDown="NameInput_KeyDown" Width="200" Height="20" VerticalAlignment="Top"/>
             </StackPanel>
 
         </Grid>

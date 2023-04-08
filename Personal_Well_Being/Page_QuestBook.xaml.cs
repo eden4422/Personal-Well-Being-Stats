@@ -16,6 +16,8 @@ namespace Personal_Well_Being
         private List<Attribute> Stats { get; set; }
         private List<Attribute> Skills { get; set; }
 
+        private Attribute? SelectedStat { get; set; }
+
         public Page_QuestBook(MainWindow mainWindow, UserController UC)
         {
             InitializeComponent();
@@ -24,15 +26,25 @@ namespace Personal_Well_Being
             this.Stats = UC.CurrentUser.CurrentSheet.Stats;
             this.Skills = UC.CurrentUser.CurrentSheet.Skills;
             this.StatList.ItemsSource = this.Stats;
-            this.SkilList.ItemsSource = this.Skills;
+            this.SkillList.ItemsSource = this.Skills;
+
+            // AddMilestone button becomes enabled when a stat or skill is selected
+            this.AddMilestoneButton.IsEnabled = false;
+
+            // AddTask button becomes enabled when a milestone is selected.
+            this.AddTaskButton.IsEnabled = false;
         }
 
         private void AddMilestoneButton_Click(object sender, System.Windows.RoutedEventArgs e)
         {
+            string milestoneDescription;
+
             Window_AddMilestone window = new Window_AddMilestone();
             if (window.ShowDialog() == true)
             {
+                milestoneDescription = window.mileStoneDescription;
 
+                this.SelectedStat.AddMilestone(milestoneDescription, 50);
             }
         }
 
@@ -49,6 +61,8 @@ namespace Personal_Well_Being
                 {
                     taskListView.Items.Add(task);
                 }
+
+                // connect to backend here.
             }
         }
 
@@ -69,6 +83,21 @@ namespace Personal_Well_Being
             Victory victory = new Victory();
             taskListView.Items.Remove(taskListView.SelectedItem);
             victory.Show();
+        }
+
+        private void StatList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            this.SelectedStat = (Attribute?)this.StatList.SelectedItem;
+            if (this.SelectedStat != null)
+            {
+                this.AddMilestoneButton.IsEnabled = true;
+                this.MilestoneList.ItemsSource = this.SelectedStat.Milestones;
+            }
+            else
+            {
+                this.AddMilestoneButton.IsEnabled = false;
+                this.MilestoneList.ItemsSource = null;
+            }
         }
     }
 }

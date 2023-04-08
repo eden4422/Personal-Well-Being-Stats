@@ -12,7 +12,16 @@
     <None Remove="Default Images\Gandalf.jpg" />
     <None Remove="Default Images\Gandalf.png" />
     <None Remove="Default Images\Gladiator.jpg" />
+    <None Remove="gear.png" />
     <None Remove="image1.jpg" />
+    <None Remove="journal.png" />
+    <None Remove="parchment.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="gear.png" />
+    <Resource Include="journal.png" />
+    <Resource Include="parchment.jpg" />
   </ItemGroup>
 
   <ItemGroup>
