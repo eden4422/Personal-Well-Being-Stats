@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Windows.Controls;
 
 namespace Personal_Well_Being
@@ -13,8 +14,8 @@ namespace Personal_Well_Being
 
         private UserController UC;
 
-        private List<Attribute> Stats { get; set; }
-        private List<Attribute> Skills { get; set; }
+        private ObservableCollection<Attribute> Stats { get; set; }
+        private ObservableCollection<Attribute> Skills { get; set; }
 
         private Attribute? SelectedStatSkill { get; set; }
 
@@ -91,11 +92,13 @@ namespace Personal_Well_Being
             if (this.SelectedStatSkill != null)
             {
                 this.AddMilestoneButton.IsEnabled = true;
+                this.AddTaskButton.IsEnabled = true;
                 this.MilestoneList.ItemsSource = this.SelectedStatSkill.CurrentMilestones;
             }
             else
             {
                 this.AddMilestoneButton.IsEnabled = false;
+                this.AddTaskButton.IsEnabled = false;
                 this.MilestoneList.ItemsSource = null;
             }
         }
@@ -134,6 +137,23 @@ namespace Personal_Well_Being
             else
             {
                 this.CompleteMilestoneButton.IsEnabled = false;
+            }
+        }
+
+        private void SkillList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            this.SelectedStatSkill = (Attribute?)this.SkillList.SelectedItem;
+            if (this.SelectedStatSkill != null)
+            {
+                this.AddMilestoneButton.IsEnabled = true;
+                this.AddTaskButton.IsEnabled = true;
+                this.MilestoneList.ItemsSource = this.SelectedStatSkill.CurrentMilestones;
+            }
+            else
+            {
+                this.AddMilestoneButton.IsEnabled = false;
+                this.AddTaskButton.IsEnabled = false;
+                this.MilestoneList.ItemsSource = null;
             }
         }
     }
