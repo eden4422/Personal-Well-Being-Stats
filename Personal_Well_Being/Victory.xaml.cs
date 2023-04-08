@@ -1,5 +1,7 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace Personal_Well_Being
 {
@@ -11,9 +13,7 @@ namespace Personal_Well_Being
         public Victory()
         {
             InitializeComponent();
-            System.Media.SoundPlayer player = new System.Media.SoundPlayer();
-            player.SoundLocation = "D:\\Git\\Personal-Well-Being-Stats\\Personal_Well_Being\\victory.wav";
-            player.Load();
+            System.Media.SoundPlayer player = new(@"victory.wav");
             player.Play();
         }
 

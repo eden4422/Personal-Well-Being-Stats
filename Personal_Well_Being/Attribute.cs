@@ -90,6 +90,7 @@ namespace Personal_Well_Being
             Milestone newMilestone = new Milestone(description, xpValue, this.Milestones);
             newMilestone.AttributeItemPropertyChanged += this.OwnedItemPropertyChanged;
             this.Milestones.Add(newMilestone);
+            RefreshMilestones();
         }
 
         /// <summary>
@@ -117,11 +118,19 @@ namespace Personal_Well_Being
 
         private void RefreshMilestones()
         {
+            this.CompletedMilestones = new();
             IEnumerable<AttributeItem> completedMilestones = from Milestone milestone in this.Milestones where milestone.IsCompleted == true select milestone;
-            this.CompletedMilestones = new ObservableCollection<AttributeItem>(completedMilestones.ToList());
+            foreach (AttributeItem item in completedMilestones)
+            {
+                this.CompletedMilestones.Add(item);
+            }
 
+            this.CurrentMilestones = new();
             IEnumerable<AttributeItem> currentMilestones = from Milestone milestone in this.Milestones where milestone.IsCompleted == false select milestone;
-            this.CurrentMilestones = new ObservableCollection<AttributeItem>(currentMilestones.ToList());
+            foreach (AttributeItem item in currentMilestones)
+            {
+                this.CurrentMilestones.Add(item);
+            }
         }
     }
 }

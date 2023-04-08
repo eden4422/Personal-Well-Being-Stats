@@ -84,6 +84,7 @@
                     <StackPanel Orientation="Horizontal" Grid.Row="2">
                         <Button Background="Goldenrod" FontSize="14" FontFamily="Old English Text MT" Padding="10" Margin="50,0, 20, 0" x:Name="AddMilestoneButton" Click="AddMilestoneButton_Click">Add Quest</Button>
                         <Button Background="LightBlue" FontSize="14" FontFamily="Old English Text MT" Padding="10" Margin="20,0, 20, 0" x:Name="CompleteMilestoneButton" Click="CompleteMilestoneButton_Click">Complete Quest</Button>
+
                     </StackPanel>
                 </Grid>
 
@@ -107,6 +108,7 @@
                 <StackPanel Orientation="Horizontal" Grid.Row="2">
                     <Button FontFamily="Old English Text MT" FontSize="14" Background="Goldenrod" Padding="10" Margin="10,0, 20, 0" x:Name="AddTaskButton">Add Quest</Button>
                     <Button FontFamily="Old English Text MT" FontSize="14" Background="LightBlue" Padding="10" Margin="0,0, 20, 0" x:Name="CompleteTaskButton">Complete Quest</Button>
+
                 </StackPanel>
             </Grid>
         </Grid>
