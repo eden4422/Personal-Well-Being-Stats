@@ -47,15 +47,13 @@ namespace Personal_Well_Being
 
         internal List<AttributeItem> Milestones { get; }
 
-        /*
         internal List<AttributeItem> CompletedMilestones
         {
             get
             {
-                return this.Milestones 
+                return this.Milestones;
             }
         }
-        */
 
         internal List<AttributeItem> Tasks { get; }
 
