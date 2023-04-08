@@ -7,6 +7,8 @@ namespace Personal_Well_Being
     /// </summary>
     public partial class Window_WriteBiography : Window
     {
+        public string bio;
+
         public Window_WriteBiography()
         {
             InitializeComponent();
@@ -17,6 +19,8 @@ namespace Personal_Well_Being
 
         private void AcceptButton_Click(object sender, RoutedEventArgs e)
         {
+            bio = BiographyTextBox.Text;
+
             DialogResult = true;
             this.Close();
         }

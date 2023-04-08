@@ -13,7 +13,7 @@
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock FontSize="18" TextAlignment="Center" Grid.Row="0">Choose Stats</TextBlock>
+        <TextBlock FontSize="18" Foreground="Goldenrod" FontFamily="Old English Text MT" TextAlignment="Center" Grid.Row="0">Choose Stats</TextBlock>
 
         <Grid Margin="20, 0, 20, 0" Grid.Row="1">
             <Grid>
@@ -25,14 +25,15 @@
                 <StackPanel Grid.Column="0">
                     <TextBlock FontSize="16">Select the Stats that mean the most to you.</TextBlock>
                 
-                    <CheckBox FontSize="14">Mood</CheckBox>
-                    <CheckBox FontSize="14">Fitness</CheckBox>
-                    <CheckBox FontSize="14">Career</CheckBox>
-                    <CheckBox FontSize="14">Friends</CheckBox>
-                    <CheckBox FontSize="14">Companionship</CheckBox>
-                    <CheckBox FontSize="14">Spirituality</CheckBox>
-                    <CheckBox FontSize="14">School</CheckBox>
-                    <CheckBox FontSize="14">Family</CheckBox>
+                    <CheckBox x:Name="MoodBox" FontSize="14">Mood</CheckBox>
+                    <CheckBox x:Name="FitnessBox" FontSize="14">Fitness</CheckBox>
+                    <CheckBox x:Name="CareerBox" FontSize="14">Career</CheckBox>
+                    <CheckBox x:Name="FriendsBox" FontSize="14">Friends</CheckBox>
+                    <CheckBox x:Name="CompanionshipBox" FontSize="14">Companionship</CheckBox>
+                    <CheckBox x:Name="SpiritualityBox" FontSize="14">Spirituality</CheckBox>
+                    <CheckBox x:Name="SchoolBox" FontSize="14">School</CheckBox>
+                    <CheckBox x:Name="FamilyBox" FontSize="14">Family</CheckBox>
+
                 </StackPanel>
             </Grid>
 
@@ -50,8 +51,8 @@
                     <ColumnDefinition Width="5*"/>
                 </Grid.ColumnDefinitions>
 
-                <Button x:Name="AcceptButton" Margin="20" Grid.Column="0" Click="AcceptButton_Click">Accept</Button>
-                <Button x:Name="CancelButton" Margin="20" Grid.Column="1" Click="CancelButton_Click">Cancel</Button>
+                <Button x:Name="AcceptButton" Background="Goldenrod" FontFamily="Old English Text MT" FontSize="25" Margin="20" Grid.Column="0" Click="AcceptButton_Click">Accept</Button>
+                <Button x:Name="CancelButton" Background="Goldenrod" FontFamily="Old English Text MT" FontSize="25"  Margin="20" Grid.Column="1" Click="CancelButton_Click">Cancel</Button>
             </Grid>
         </Grid>
     </Grid>

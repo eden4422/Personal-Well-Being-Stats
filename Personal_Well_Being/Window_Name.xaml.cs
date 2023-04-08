@@ -25,5 +25,14 @@ namespace Personal_Well_Being
         {
             this.Close();
         }
+
+        private void NameInput_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            if (e.Key == System.Windows.Input.Key.Enter)
+            {
+                DialogResult = true;
+                this.Close();
+            }
+        }
     }
 }

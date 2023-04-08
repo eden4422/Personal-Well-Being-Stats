@@ -5,22 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Personal_Well_Being"
         mc:Ignorable="d"
-        Title="Window_Name" Height="450" Width="800">
+        Title="Window_Name" Height="180" Width="450"
+        ResizeMode="NoResize">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
-            <RowDefinition Height="8*"/>
-            <RowDefinition Height="2*"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
 
-        <TextBlock FontSize="18" TextAlignment="Center" Grid.Row="0">Choose Stats</TextBlock>
+        <TextBlock FontSize="18" Foreground="Goldenrod" FontFamily="Old English Text MT"  TextAlignment="Center" Grid.Row="0">What are you called?</TextBlock>
+
 
         <Grid Margin="20, 0, 20, 0" Grid.Row="1">
 
-            <!-- Code goes here -->
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Enter your name:" Margin="0,0,10,0"/>
-                <TextBox x:Name="NameInput" Text="{Binding InputName}" Width="200" Height="20" VerticalAlignment="Top"/>
+                <TextBox x:Name="NameInput" Text="{Binding InputName}" KeyDown="NameInput_KeyDown" Width="200" Height="20" VerticalAlignment="Top"/>
             </StackPanel>
 
         </Grid>
@@ -37,8 +38,8 @@
                     <ColumnDefinition Width="5*"/>
                 </Grid.ColumnDefinitions>
 
-                <Button x:Name="AcceptButton" Margin="20" Grid.Column="0" Click="AcceptButton_Click">Accept</Button>
-                <Button x:Name="CancelButton" Margin="20" Grid.Column="1" Click="CancelButton_Click">Cancel</Button>
+                <Button x:Name="AcceptButton" Background="Goldenrod" FontFamily="Old English Text MT" FontSize="15" Margin="2" Grid.Column="0" Click="AcceptButton_Click">Accept</Button>
+                <Button x:Name="CancelButton" Background="Goldenrod" FontFamily="Old English Text MT" FontSize="15" Margin="2" Grid.Column="1" Click="CancelButton_Click">Cancel</Button>
             </Grid>
         </Grid>
     </Grid>

@@ -1,4 +1,4 @@
-﻿<Page x:Class="Personal_Well_Being.Page_QuestBook"
+<Page x:Class="Personal_Well_Being.Page_QuestBook"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -9,49 +9,99 @@
       Title="Page1">
 
 
-    <Grid>
+    <Grid Margin="15">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width ="200"/>
             <ColumnDefinition Width ="*"/>
         </Grid.ColumnDefinitions>
-        <DockPanel>
-            <Label x:Name="UserName" DockPanel.Dock="Top" Height="50" FontSize="28"/>
+        
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
 
-            <TabControl DockPanel.Dock="Top">
-                <TabItem Header="Stats" Grid.Column="0">
-                    <ItemsControl x:Name="StatList">
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate>
-                                <Grid Margin="0,0,0,5">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*" />
-                                        <ColumnDefinition Width="50" />
-                                    </Grid.ColumnDefinitions>
-                                    <Label Content="{Binding Name}" Grid.Column="0" FontSize="20"/>
-                                    <Label Content="{Binding InitialValue}" Grid.Column="1" FontSize="20"/>
-                                </Grid>
-                            </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                    </ItemsControl>
+            <StackPanel Orientation="Horizontal" Grid.Row="0">
+                <Button x:Name="GearButton" Width="50" Height="50" Click="GearButton_Click" >
+                    <Image Source="/gear.png"/>
+                </Button>
+
+                <Button x:Name="ProgressReport" Width="50" Click="ProgressReport_Click">
+                    <Image Source="/journal.png"/>
+                </Button>
+            </StackPanel>
+
+            <TabControl Grid.Row="1">
+                <TabItem Header="Stats" Grid.Column="0" Width="90">
+                    <ListView x:Name="StatList">
+                        <ListView.View>
+                            <GridView AllowsColumnReorder="false">
+                                <GridViewColumn Header="Stat" Width="Auto" DisplayMemberBinding="{Binding Name}" />
+                                <GridViewColumn Header="Value" Width="Auto" DisplayMemberBinding="{Binding CurrentValue}"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
                 </TabItem>
-                <TabItem Header="Skills">
-                    <ItemsControl x:Name="SkilList">
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate>
-                                <Grid Margin="0,0,0,5">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*" />
-                                        <ColumnDefinition Width="*" />
-                                    </Grid.ColumnDefinitions>
-                                    <Label Content="{Binding Name}" Grid.Column="0" FontSize="18"/>
-                                    <Label Content="{Binding InitialValue}" Grid.Column="1" FontSize="18"/>
-                                </Grid>
-                            </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                    </ItemsControl>
+                <TabItem Header="Skills" Width="90">
+                    <ListView x:Name="SkillList">
+                        <ListView.View>
+                            <GridView AllowsColumnReorder="false">
+                                <GridViewColumn Header="Stat" Width="Auto" DisplayMemberBinding="{Binding Name}" />
+                                <GridViewColumn Header="Value" Width="Auto" DisplayMemberBinding="{Binding CurrentValue}"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
                 </TabItem>
             </TabControl>
-        </DockPanel>
-        <Button Grid.Column="1">Test</Button>
+        </Grid>
+        
+        
+        <Grid Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="6*"/>
+                <ColumnDefinition Width="4*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="40"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" Grid.Row="0">QUEST</TextBlock>
+
+                    <ListView x:Name="milestoneListView" Margin="10,0,10,10" Grid.Row="1" >
+                    </ListView>
+
+                    <Button Margin="20,0, 20, 0" x:Name="AddMilestoneButton" Grid.Row="2" Click="AddMilestoneButton_Click">Add Milestone</Button>
+                </Grid>
+                
+            </Grid>
+
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="70"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Row="0">Journey</TextBlock>
+
+                <Grid Margin="0,0,0,10" Grid.Row="1">
+
+                    <ListView x:Name="taskListView" Margin="10,0, 10, 0">
+                    </ListView>
+
+                    <Button x:Name="CompletedButton" Margin="10,0, 10, 0" Background="LightBlue"  VerticalAlignment="Bottom" Click="CompletedButton_Click">Quest Completed</Button>
+                    
+                    
+                    
+                </Grid>
+
+                <Button Margin="20,0, 20, 0" x:Name="AddTaskButton" Grid.Row="2" Click="AddTaskButton_Click">Add Task</Button>
+            </Grid>
+        </Grid>
     </Grid>
 </Page>

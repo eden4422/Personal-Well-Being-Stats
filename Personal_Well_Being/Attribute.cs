@@ -27,6 +27,22 @@ namespace Personal_Well_Being
 
         public int InitialValue { get; set; }
 
+        public int CurrentValue
+        {
+            get
+            {
+                return this.InitialValue + this.CompletedMilestones.Count;
+            }
+        }
+
+        public int GoalValue
+        {
+            get
+            {
+                return this.InitialValue + this.Milestones.Count;
+            }
+        }
+
         internal int Priority { get; set; }
 
         internal int TotalXP

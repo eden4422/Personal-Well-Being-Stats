@@ -13,21 +13,19 @@
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock FontSize="18" TextAlignment="Center" Grid.Row="0">Choose Stats</TextBlock>
+        <TextBlock FontSize="18" Foreground="Goldenrod" FontFamily="Old English Text MT"  TextAlignment="Center" Grid.Row="0">Choose Stats</TextBlock>
 
         <Grid Margin="20, 0, 20, 0" Grid.Row="1">
-
-            <!-- Code goes here -->
+            
             <StackPanel Orientation="Vertical">
                 <TextBlock Text="Describe yourself: "/>
                 <TextBox x:Name="BiographyTextBox"
-                         Height="250"
+                         Height="308"
                          AcceptsReturn="True"
                          AcceptsTab="True"
                          AutoWordSelection="True"
                          TextWrapping="WrapWithOverflow"/>
             </StackPanel>
-
         </Grid>
 
         <Grid Grid.Row="2">
@@ -42,8 +40,8 @@
                     <ColumnDefinition Width="5*"/>
                 </Grid.ColumnDefinitions>
 
-                <Button x:Name="AcceptButton" Margin="20" Grid.Column="0" Click="AcceptButton_Click">Accept</Button>
-                <Button x:Name="CancelButton" Margin="20" Grid.Column="1" Click="CancelButton_Click">Cancel</Button>
+                <Button x:Name="AcceptButton" Margin="20" Background="Goldenrod" FontFamily="Old English Text MT" FontSize="25" Grid.Column="0" Click="AcceptButton_Click">Accept</Button>
+                <Button x:Name="CancelButton" Margin="20" Background="Goldenrod" FontFamily="Old English Text MT" FontSize="25" Grid.Column="1" Click="CancelButton_Click">Cancel</Button>
             </Grid>
         </Grid>
     </Grid>
