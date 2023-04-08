@@ -12,8 +12,8 @@
         private string bio;
         private int totalLevel;
         private int totalXP;
-        private List<AttributesItem> stats;
-        private List<AttributesItem> skills;
+        private List<Attribute> stats;
+        private List<Attribute> skills;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Sheet"/> class.
@@ -23,8 +23,8 @@
             bio = string.Empty;
             totalLevel = 0;
             totalXP = 0;
-            stats = new List<AttributeItem> ();
-            skills = new List<AttributeItem> ();
+            stats = new List<Attribute> ();
+            skills = new List<Attribute> ();
         }
 
         /// <summary>
@@ -67,7 +67,7 @@
         /// <summary>
         /// Gets list of stats.
         /// </summary>
-        public List<AttributesItem> Stats
+        public List<Attribute> Stats
         {
             get
             {
@@ -78,7 +78,7 @@
         /// <summary>
         /// Gets list of skills.
         /// </summary>
-        public List<AttributesItem> Skills
+        public List<Attribute> Skills
         {
             get
             {
@@ -95,12 +95,12 @@
         {
             this.totalXP = 0;
 
-            foreach (AttributeItem stat in stats)
+            foreach (Attribute stat in stats)
             {
                 this.totalXP += stat.TotalXP;
             }
 
-            foreach (AttributeItem skill in skills)
+            foreach (Attribute skill in skills)
             {
                 this.totalXP += skill.TotalXP;
             }
@@ -111,20 +111,20 @@
         /// Adds a new stat attribute to the list of stats.
         /// </summary>
         /// <param name="newStat">The new stat to be added.</param>
-        public void AddStat(AttributeItem newStat)
+        public void AddStat(Attribute newStat)
         {
             this.stats.Add(newStat);
-            newStat.XPChanged += this.AttributeXpChange;
+            newStat.PropertyChanged += this.AttributeXpChange;
         }
 
         /// <summary>
         /// Adds a new skill attribute to the list of stats.
         /// </summary>
         /// <param name="newSkill">The new skill to be added.</param>
-        public void AddSkill(AttributeItem newSkill)
+        public void AddSkill(Attribute newSkill)
         {
             this.skills.Add(newSkill);
-            newSkill.XPChanged += this.AttributeXpChange;
+            newSkill.PropertyChanged += this.AttributeXpChange;
         }
     }
 }
