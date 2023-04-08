@@ -41,7 +41,7 @@
                 <Grid Margin="15">
                     <Border  BorderThickness="1" BorderBrush="Black">
 
-                        <Image Source="C:\RealStats\Personal-Well-Being-Stats\Personal_Well_Being\image1.jpg"/>
+                        <Image Source="image1.jpg"/>
                     </Border>
                 </Grid>
             </Grid>
