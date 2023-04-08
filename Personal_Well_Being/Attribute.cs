@@ -65,15 +65,9 @@ namespace Personal_Well_Being
 
         internal ObservableCollection<AttributeItem> Milestones { get; }
 
-        internal ObservableCollection<AttributeItem> CompletedMilestones
-        {
-            get
-            {
-                IEnumerable<AttributeItem> completedMilestones = from Milestone milestone in this.Milestones where milestone.IsCompleted == true select milestone;
-                //return completedMilestones.ToList();
-                return new ObservableCollection<AttributeItem>(completedMilestones.ToList());
-            }
-        }
+        internal ObservableCollection<AttributeItem> CompletedMilestones { get; private set; } = new();
+
+        internal ObservableCollection<AttributeItem> CurrentMilestones { get; private set; } = new();
 
         internal ObservableCollection<AttributeItem> Tasks { get; }
 
@@ -111,7 +105,17 @@ namespace Personal_Well_Being
             if (e.PropertyName == "IsCompleted")
             {
                 this.TotalXP += e.XpValue;
+                this.RefreshMilestones();
             }
+        }
+
+        private void RefreshMilestones()
+        {
+            IEnumerable<AttributeItem> completedMilestones = from Milestone milestone in this.Milestones where milestone.IsCompleted == true select milestone;
+            this.CompletedMilestones = new ObservableCollection<AttributeItem>(completedMilestones.ToList());
+
+            IEnumerable<AttributeItem> currentMilestones = from Milestone milestone in this.Milestones where milestone.IsCompleted == false select milestone;
+            this.CurrentMilestones = new ObservableCollection<AttributeItem>(currentMilestones.ToList());
         }
     }
 }

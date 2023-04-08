@@ -15,7 +15,11 @@ namespace Personal_Well_Being
         private List<Attribute> Stats { get; set; }
         private List<Attribute> Skills { get; set; }
 
-        private Attribute? SelectedStat { get; set; }
+        private Attribute? SelectedStatSkill { get; set; }
+
+        private Milestone? SelectedMilestone { get; set; }
+
+        private Task? SelectedTask { get; set; }
 
         public Page_QuestBook(MainWindow mainWindow, UserController UC)
         {
@@ -32,6 +36,8 @@ namespace Personal_Well_Being
 
             // AddTask button becomes enabled when a milestone is selected.
             this.AddTaskButton.IsEnabled = false;
+
+            this.CompleteMilestoneButton.IsEnabled = false;
         }
 
         private void AddMilestoneButton_Click(object sender, System.Windows.RoutedEventArgs e)
@@ -43,7 +49,7 @@ namespace Personal_Well_Being
             {
                 milestoneDescription = window.mileStoneDescription;
 
-                this.SelectedStat.AddMilestone(milestoneDescription, 50);
+                this.SelectedStatSkill.AddMilestone(milestoneDescription, 50);
             }
         }
 
@@ -58,7 +64,7 @@ namespace Personal_Well_Being
 
                 foreach (string task in tasks)
                 {
-                    taskListView.Items.Add(task);
+                    TaskList.Items.Add(task);
                 }
 
                 // connect to backend here.
@@ -85,16 +91,51 @@ namespace Personal_Well_Being
 
         private void StatList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            this.SelectedStat = (Attribute?)this.StatList.SelectedItem;
-            if (this.SelectedStat != null)
+            this.SelectedStatSkill = (Attribute?)this.StatList.SelectedItem;
+            if (this.SelectedStatSkill != null)
             {
                 this.AddMilestoneButton.IsEnabled = true;
-                this.MilestoneList.ItemsSource = this.SelectedStat.Milestones;
+                this.MilestoneList.ItemsSource = this.SelectedStatSkill.Milestones;
             }
             else
             {
                 this.AddMilestoneButton.IsEnabled = false;
                 this.MilestoneList.ItemsSource = null;
+            }
+        }
+
+        private void CompleteMilestoneButton_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            if (this.MilestoneList.SelectedItem != null)
+            {
+                ((Milestone)this.MilestoneList.SelectedItem).Complete();
+                ((Milestone)this.MilestoneList.SelectedItem).Remove();
+            }
+        }
+
+        private void milestoneListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            this.SelectedMilestone = (Milestone?)this.MilestoneList.SelectedItem;
+            if (this.SelectedMilestone != null && !this.SelectedMilestone.IsCompleted)
+            {
+                this.CompleteMilestoneButton.IsEnabled = true;
+            }
+            else
+            {
+                this.CompleteMilestoneButton.IsEnabled = false;
+            }
+        }
+
+        private void TaskList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            this.SelectedTask = (Task?)this.TaskList.SelectedItem;
+            if (this.SelectedTask != null)
+            {
+                this.CompleteMilestoneButton.IsEnabled = true;
+            }
+            else
+            {
+                this.CompleteMilestoneButton.IsEnabled = false;
             }
         }
     }
