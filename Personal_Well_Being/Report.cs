@@ -36,7 +36,7 @@ namespace Personal_Well_Being
 
             for (int i = 0; i < initialStats.Count; i++)
             {
-                this.StatProgress.Add((initialStats[i].Name, initialStats[i].CurrentValue, currentStats[i].CurrentValue, goalStats[i].CurrentValue));
+                this.StatProgress.Add((initialStats[i].Name, initialStats[i].InitialValue, currentStats[i].InitialValue, goalStats[i].InitialValue));
             }
 
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(StatProgress)));
@@ -50,7 +50,7 @@ namespace Personal_Well_Being
 
             for (int i = 0; i < initialStats.Count; i++)
             {
-                this.StatProgress.Add((initialSkills[i].Name, initialSkills[i].CurrentValue, currentSkills[i].CurrentValue, goalSkills[i].CurrentValue));
+                this.StatProgress.Add((initialSkills[i].Name, initialSkills[i].InitialValue, currentSkills[i].InitialValue, goalSkills[i].InitialValue));
             }
 
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SkillProgress)));

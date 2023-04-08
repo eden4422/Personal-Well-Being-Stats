@@ -1,22 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Markup;
 
 namespace Personal_Well_Being
 {
     internal class Attribute : INotifyPropertyChanged
     {
-        private int currentValue;
-        private int priority;
         private int totalXP;
-        private string name;
-        private List<AttributeItem> milestones;
-        private List<AttributeItem> tasks;
 
         /// <summary>
         /// Creates a new instance of the Attribute class.
@@ -26,25 +16,17 @@ namespace Personal_Well_Being
         /// <param name="priority">The priority of the attribute.</param>
         internal Attribute(string name, int currentValue, int priority)
         {
-            this.name = name;
-            this.currentValue = currentValue;
-            this.priority = priority;
+            this.Name = name;
+            this.InitialValue = currentValue;
+            this.Priority = priority;
             this.totalXP = 0;
-            this.milestones = new List<AttributeItem>();
-            this.tasks = new List<AttributeItem>();
+            this.Milestones = new List<AttributeItem>();
+            this.Tasks = new List<AttributeItem>();
         }
 
-        internal int CurrentValue
-        {
-            get { return this.currentValue; }
-            set { this.currentValue = value; }
-        }
+        internal int InitialValue { get; set; }
 
-        internal int Priority
-        { 
-            get { return this.priority; }
-            set{ this.priority = value; } 
-        }
+        internal int Priority { get; set; }
 
         internal int TotalXP
         {
@@ -61,21 +43,21 @@ namespace Personal_Well_Being
             }
         }
 
-        internal string Name
-        {
-            get { return this.name; }
-            set { this.name = value; }
-        }
+        internal string Name { get; set; }
 
-        internal List<AttributeItem> Milestones
-        {
-            get { return this.milestones;}
-        }
+        internal List<AttributeItem> Milestones { get; }
 
-        internal List<AttributeItem> Tasks
+        /*
+        internal List<AttributeItem> CompletedMilestones
         {
-            get { return this.tasks;}
+            get
+            {
+                return this.Milestones 
+            }
         }
+        */
+
+        internal List<AttributeItem> Tasks { get; }
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
@@ -87,9 +69,9 @@ namespace Personal_Well_Being
         /// <param name="xpValue"></param>
         internal void AddMilestone(string description, int xpValue)
         {
-            Milestone newMilestone = new Milestone(description, xpValue, this.milestones);
+            Milestone newMilestone = new Milestone(description, xpValue, this.Milestones);
             newMilestone.AttributeItemPropertyChanged += this.OwnedItemPropertyChanged;
-            this.milestones.Add(newMilestone);
+            this.Milestones.Add(newMilestone);
         }
 
         /// <summary>
@@ -101,9 +83,9 @@ namespace Personal_Well_Being
         /// <param name="frequency">The frequency of the task.</param>
         internal void AddTask(string description, int xpValue, TimeSpan frequency)
         {
-            Task newTask = new Task(description, xpValue, this.tasks, frequency);
+            Task newTask = new Task(description, xpValue, this.Tasks, frequency);
             newTask.AttributeItemPropertyChanged += this.OwnedItemPropertyChanged;
-            this.tasks.Add(newTask);
+            this.Tasks.Add(newTask);
         }
 
         internal void OwnedItemPropertyChanged(Object sender, AttributeItemPropertyChangedEventArgs e)
